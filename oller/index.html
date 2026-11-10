@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Oller · Torre frente al parque</title>
+<meta name="description" content="Oller: torre residencial de catorce pisos frente al parque. Unidades de uno a cuatro ambientes. Proyecto de concepto de NEA Sistemas.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#EDE8E0">
+<link rel="preload" href="assets/fonts/intertight-300-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts/inter.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <!-- Logo C elegido por Julián (oller/logo/opciones.png): aro, dos columnas, la sombra de la segunda y ER -->
+  <symbol id="logo" viewBox="0 0 400 120">
+    <circle cx="52" cy="60" r="44" fill="none" stroke="currentColor" stroke-width="9"/>
+    <rect x="140" y="16" width="9" height="88" fill="currentColor"/>
+    <rect x="190" y="16" width="9" height="88" fill="currentColor"/>
+    <polygon points="199,104 262,104 216,16 199,16" fill="#A86A45" opacity=".55"/>
+    <text x="270" y="104" font-family="Inter Tight, sans-serif" font-weight="300" font-size="122" letter-spacing="-4" fill="currentColor">ER</text>
+  </symbol>
+</svg>
+
+<header class="barra">
+  <a class="logo" href="#inicio" aria-label="Oller, inicio"><svg aria-hidden="true"><use href="#logo"/></svg></a>
+  <nav aria-label="Secciones">
+    <a href="#proyecto">Proyecto</a>
+    <a href="#unidades">Unidades</a>
+    <a href="#obra">Obra</a>
+    <a href="#contacto" class="boton-barra">Agendar visita</a>
+  </nav>
+</header>
+
+<main>
+  <section class="portada" id="inicio" aria-label="Oller">
+    <div class="portada-fija">
+      <img class="hora-img" data-hora-img="0" src="assets/img/fachada-manana.jpg" alt="El edificio frente al parque">
+      <img class="hora-img" data-hora-img="1" src="assets/img/fachada-mediodia.jpg" alt="" aria-hidden="true">
+      <img class="hora-img" data-hora-img="2" src="assets/img/fachada-tarde.jpg" alt="" aria-hidden="true">
+      <div class="portada-velo"></div>
+      <div class="portada-texto">
+        <p class="etiqueta">Torre residencial · Entrega diciembre 2027</p>
+        <h1>Catorce pisos frente al parque.</h1>
+        <a class="boton" href="#unidades">Ver unidades disponibles</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="proyecto" id="proyecto" aria-labelledby="proyecto-titulo">
+    <p class="etiqueta" id="proyecto-titulo">El proyecto</p>
+    <div>
+      <p class="proyecto-texto">Oller es una torre de catorce pisos sobre el borde del parque, con 48 unidades de uno a cuatro ambientes. Hormigón visto, ladrillo claro y balcones profundos con celosías de madera. Cada planta está orientada para que los ambientes principales reciban sol directo.</p>
+      <dl class="datos">
+        <div><dt>Pisos</dt><dd>14</dd></div>
+        <div><dt>Unidades</dt><dd>48</dd></div>
+        <div><dt>Ambientes</dt><dd>1 a 4</dd></div>
+        <div><dt>Entrega</dt><dd>Dic. 2027</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="galeria" aria-label="Fotos del proyecto">
+    <figure><img src="assets/img/balcon.jpg" alt="El parque desde un balcón del piso diez" loading="lazy"><figcaption>Balcón, piso 10</figcaption></figure>
+    <figure><img src="assets/img/ambiente-noche.jpg" alt="El living de un dos ambientes a la tarde" loading="lazy"><figcaption>Living, dos ambientes</figcaption></figure>
+    <figure><img src="assets/img/ranura.jpg" alt="Detalle de revoque y piso de piedra en el pasillo" loading="lazy"><figcaption>Pasillo de acceso</figcaption></figure>
+  </section>
+
+  <section class="orientacion" aria-labelledby="orientacion-titulo">
+    <div class="orientacion-texto">
+      <p class="etiqueta">Orientación</p>
+      <h2 id="orientacion-titulo">Un dos ambientes norte, a lo largo del día.</h2>
+      <p>Antes de elegir, conviene saber qué luz recibe cada unidad. Estas fotos muestran la misma planta a la mañana, al mediodía y a la tarde.</p>
+      <div class="pestanas" role="tablist" aria-label="Momento del día">
+        <button role="tab" aria-selected="true" data-luz="0">Mañana</button>
+        <button role="tab" aria-selected="false" data-luz="1">Mediodía</button>
+        <button role="tab" aria-selected="false" data-luz="2">Tarde</button>
+      </div>
+    </div>
+    <figure class="orientacion-foto">
+      <img data-luz-img="0" class="activa" src="assets/img/ambiente-manana.jpg" alt="El living a la mañana">
+      <img data-luz-img="1" src="assets/img/ambiente-tarde.jpg" alt="El living al mediodía">
+      <img data-luz-img="2" src="assets/img/ambiente-noche.jpg" alt="El living a la tarde">
+    </figure>
+  </section>
+
+  <section class="unidades" id="unidades" aria-labelledby="unidades-titulo">
+    <div class="cabeza">
+      <h2 id="unidades-titulo">Unidades disponibles</h2>
+      <div class="filtro" role="group" aria-label="Filtrar por orientación" data-filtro>
+        <button aria-pressed="true" data-o="todas">Todas</button>
+        <button aria-pressed="false" data-o="Norte">Norte</button>
+        <button aria-pressed="false" data-o="Este">Este</button>
+        <button aria-pressed="false" data-o="Oeste">Oeste</button>
+      </div>
+    </div>
+    <table class="tabla">
+      <thead><tr><th>Unidad</th><th>Ambientes</th><th>Superficie</th><th>Orientación</th><th>Sol directo</th><th></th></tr></thead>
+      <tbody data-unidades></tbody>
+    </table>
+  </section>
+
+  <section class="obra" id="obra" aria-labelledby="obra-titulo">
+    <div class="cabeza">
+      <h2 id="obra-titulo">Avance de obra</h2>
+      <p class="obra-dato">Estructura: 9 de 14 pisos · Actualizado el 3 de noviembre</p>
+    </div>
+    <div class="avance" role="progressbar" aria-valuemin="0" aria-valuemax="14" aria-valuenow="9" aria-label="Pisos de estructura terminados"><i style="width:64%"></i></div>
+    <div class="obra-fotos">
+      <figure><img src="assets/img/obra-losa.jpg" alt="Llenado de losa del piso nueve" loading="lazy"><figcaption>Llenado de losa, piso 9</figcaption></figure>
+      <figure><img src="assets/img/obra-hierro.jpg" alt="Armado de hierro en columnas" loading="lazy"><figcaption>Armado de columnas</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="contacto" id="contacto" aria-labelledby="contacto-titulo">
+    <div>
+      <h2 id="contacto-titulo">Agendar una visita</h2>
+      <p class="bajada">Elige la unidad y el día. Te respondemos por WhatsApp.</p>
+    </div>
+    <form class="visita" data-visita>
+      <label>Unidad<select data-v-unidad></select></label>
+      <label>Día<select data-v-dia></select></label>
+      <label>Horario<select data-v-hora><option>Por la mañana</option><option>Al mediodía</option><option>Por la tarde</option></select></label>
+      <p class="mensaje" data-v-mensaje></p>
+      <button type="submit" class="boton boton-oscuro">Enviar por WhatsApp</button>
+      <div class="registro" data-v-registro hidden role="status">
+        <p class="registro-titulo">Consulta registrada</p>
+        <dl data-v-datos></dl>
+        <p class="aviso">Es una demostración: Oller es un proyecto de concepto de NEA Sistemas y no recibe consultas reales.</p>
+      </div>
+    </form>
+  </section>
+</main>
+
+<footer class="pie">
+  <svg class="pie-logo" aria-hidden="true"><use href="#logo"/></svg>
+  <p>Proyecto de concepto: Oller no es una desarrolladora real.<br>Identidad, sitio y sistema de consultas por <a href="https://www.neasistemas.com.ar">NEA Sistemas</a>.</p>
+</footer>
+
+<script src="app.js" defer></script>
+</body>
+</html>

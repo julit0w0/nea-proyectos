@@ -1,0 +1,164 @@
+/* Tarn · tienda de trail running como demo creíble (referencias/tarn-referencias.md).
+   Producto en estudio sobre gris, Archivo para todo, Plex Mono solo en la ficha técnica. */
+:root {
+  --nieve: #F4F4F2;
+  --negro: #111111;
+  --senal: #FF4F1F;
+  --roca: #6B6E70;
+  --linea: rgba(17, 17, 17, .14);
+  --sans: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --margen: clamp(16px, 3vw, 40px);
+  --aire: clamp(64px, 10vh, 120px);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { background: var(--nieve); color: var(--negro); font: 400 15px/1.5 var(--sans); overflow-x: clip; }
+img { display: block; width: 100%; height: 100%; object-fit: cover; }
+a { color: inherit; }
+ul { list-style: none; }
+button, input { font: inherit; color: inherit; }
+button { background: none; border: 0; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--senal); outline-offset: 2px; }
+
+h1, h2, h3 { font-stretch: 112%; font-weight: 700; letter-spacing: -.02em; line-height: 1.02; }
+h2 { font-size: clamp(26px, 2.6vw, 38px); }
+.etiqueta { font-size: 13px; color: var(--roca); }
+.cabeza { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px; }
+.cabeza a { font-size: 14px; }
+.boton {
+  display: inline-block; padding: 14px 22px; background: var(--negro); color: var(--nieve); font-weight: 600;
+  font-size: 14px; text-decoration: none; text-align: center; transition: opacity .2s;
+}
+.boton:hover { opacity: .85; }
+.boton-claro { background: var(--nieve); color: var(--negro); }
+.boton-senal { background: var(--senal); color: var(--negro); }
+
+/* Avisos y barra */
+.aviso-barra { background: var(--negro); color: var(--nieve); text-align: center; font-size: 12.5px; padding: 8px var(--margen); }
+.barra {
+  position: sticky; top: 0; z-index: 10; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
+  padding: 14px var(--margen); background: var(--nieve); border-bottom: 1px solid var(--linea);
+}
+.logo { display: inline-flex; align-items: center; gap: 10px; font: 800 21px/1 var(--sans); font-stretch: 125%; letter-spacing: .01em; text-decoration: none; justify-self: start; }
+.logo svg { width: 30px; height: 30px; margin-top: -6px; }
+.menu { display: flex; gap: 26px; font-size: 14px; font-weight: 500; }
+.menu a, .acciones a { text-decoration: none; }
+.acciones { display: flex; gap: 22px; justify-content: end; font-size: 14px; }
+
+/* Campaña */
+.campana { position: relative; height: calc(100svh - 100px); min-height: 520px; overflow: hidden; }
+.campana img { object-position: 30% 75%; }
+.campana::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(17,17,17,.55), rgba(17,17,17,0) 55%); }
+.campana-texto { position: absolute; z-index: 1; left: var(--margen); bottom: var(--margen); color: var(--nieve); display: grid; gap: 14px; }
+.campana-texto h1 { font-size: clamp(44px, 6.4vw, 96px); }
+.campana-botones { display: flex; gap: 10px; flex-wrap: wrap; }
+
+/* Productos */
+.productos { padding: var(--aire) var(--margen); }
+.grilla { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px 16px; }
+.grilla a { text-decoration: none; display: grid; gap: 10px; }
+.grilla .foto { aspect-ratio: 4 / 5; background: #dcdcd9; overflow: hidden; }
+.grilla .foto img { transition: transform .5s ease; }
+.grilla a:hover .foto img { transform: scale(1.03); }
+.grilla .nombre { font-weight: 600; font-size: 15px; }
+.grilla .datos { display: flex; justify-content: space-between; font-size: 14px; color: var(--roca); }
+.grilla .chips { display: flex; gap: 6px; }
+.grilla .chips i { width: 12px; height: 12px; border-radius: 50%; background: var(--c); border: 1px solid var(--linea); }
+.grilla .nuevo { font-size: 12px; font-weight: 600; color: var(--senal); }
+
+/* Destacado */
+.destacado { display: grid; grid-template-columns: 1fr 1fr; background: var(--negro); color: var(--nieve); }
+.destacado img { aspect-ratio: 1; }
+.destacado-texto { display: grid; gap: 18px; align-content: center; justify-items: start; padding: var(--aire) clamp(24px, 5vw, 80px); }
+.destacado-texto .etiqueta { color: #a9abad; }
+.destacado-texto h2 { font-size: clamp(30px, 3.4vw, 52px); }
+.destacado .boton { background: var(--nieve); color: var(--negro); }
+
+/* Ficha de producto */
+.producto { display: grid; grid-template-columns: 7fr 5fr; gap: clamp(20px, 3vw, 48px); padding: var(--aire) var(--margen); align-items: start; }
+.producto-fotos { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.producto-fotos img { aspect-ratio: 4 / 5; background: #dcdcd9; }
+.producto-info { position: sticky; top: 90px; display: grid; gap: 20px; }
+.producto-info h2 { font-size: clamp(30px, 3vw, 44px); }
+.precio { font-size: 20px; font-weight: 600; }
+.precio small { display: block; font-size: 13px; font-weight: 400; color: var(--roca); }
+.opcion { border: 0; display: grid; gap: 10px; }
+.opcion legend { font-size: 14px; margin-bottom: 10px; display: flex; gap: 12px; }
+.guia { color: var(--roca); }
+.colores { display: flex; gap: 10px; }
+.color { width: 32px; height: 32px; border-radius: 50%; background: var(--c); outline: 1px solid var(--linea); outline-offset: 3px; }
+.color[aria-pressed="true"] { outline: 2px solid var(--negro); }
+.talles { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+.talles button { padding: 12px 0; border: 1px solid var(--linea); font-weight: 500; }
+.talles button[aria-pressed="true"] { border-color: var(--negro); background: var(--negro); color: var(--nieve); }
+.talles button:disabled { color: #b3b3b0; text-decoration: line-through; cursor: not-allowed; }
+.nota-talle { font-size: 13px; color: var(--roca); }
+.producto-info .boton-senal { width: 100%; padding: 16px; font-size: 15px; }
+.ficha { border-top: 1px solid var(--negro); font-family: var(--mono); font-size: 13px; }
+.ficha div { display: grid; grid-template-columns: 120px 1fr; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--linea); }
+.ficha dt { color: var(--roca); }
+details { border-bottom: 1px solid var(--linea); padding: 12px 0; }
+summary { cursor: pointer; font-weight: 600; font-size: 14px; }
+details p { margin-top: 8px; color: #3c3c3c; font-size: 14px; }
+
+/* Rutas */
+.rutas { padding: 0 var(--margen) var(--aire); }
+.rutas-grilla { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.rutas-grilla article { display: grid; gap: 8px; }
+.rutas-grilla img { aspect-ratio: 4 / 5; }
+.rutas-grilla h3 { font-size: 18px; margin-top: 4px; }
+.rutas-grilla p { font-size: 14px; color: var(--roca); }
+
+/* Lanzamiento */
+.lanzamiento {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: end;
+  padding: var(--aire) var(--margen); background: var(--negro); color: var(--nieve);
+}
+.lanzamiento .etiqueta { color: var(--senal); }
+.lanzamiento h2 { font-size: clamp(36px, 4.4vw, 64px); margin: 10px 0; }
+.avisame { display: grid; gap: 10px; }
+.avisame label { font-size: 14px; color: #c9c9c6; }
+.avisame-fila { display: flex; gap: 8px; }
+.avisame input { flex: 1; padding: 13px 14px; background: transparent; border: 1px solid #5a5a5a; color: var(--nieve); }
+.avisame-ok { font-size: 13px; color: #c9c9c6; }
+
+/* Pie */
+.pie { padding: 56px var(--margen) 32px; display: grid; gap: 40px; font-size: 14px; }
+.pie-columnas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.pie-columnas div { display: grid; gap: 6px; align-content: start; }
+.pie-columnas a { text-decoration: none; }
+.pie-titulo { font-weight: 700; }
+.pie-aviso { font-size: 12px; color: var(--roca); border-top: 1px solid var(--linea); padding-top: 16px; }
+
+/* Carrito */
+.velo { position: fixed; inset: 0; background: rgba(17,17,17,.4); z-index: 20; }
+.carrito {
+  position: fixed; top: 0; right: 0; bottom: 0; width: min(420px, 100%); background: var(--nieve); z-index: 21;
+  display: grid; grid-template-rows: auto 1fr auto; animation: entrar .3s ease;
+}
+@keyframes entrar { from { transform: translateX(100%); } }
+.carrito-cabeza { display: flex; justify-content: space-between; padding: 18px 20px; border-bottom: 1px solid var(--linea); font-weight: 600; }
+.carrito ul { overflow: auto; padding: 0 20px; }
+.carrito li { display: grid; grid-template-columns: 72px 1fr auto; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--linea); font-size: 14px; }
+.carrito li img { aspect-ratio: 4 / 5; background: #dcdcd9; }
+.carrito li small { display: block; color: var(--roca); }
+.carrito-pie { padding: 18px 20px 24px; border-top: 1px solid var(--linea); display: grid; gap: 10px; }
+.subtotal { display: flex; justify-content: space-between; font-weight: 600; }
+.envio, .demo { font-size: 13px; color: var(--roca); }
+.carrito-pie .boton { width: 100%; padding: 16px; }
+
+@media (max-width: 860px) {
+  .barra { grid-template-columns: 1fr auto; }
+  .menu { display: none; }
+  .acciones a { display: none; }
+  .grilla { grid-template-columns: 1fr 1fr; gap: 22px 10px; }
+  .destacado, .producto, .lanzamiento { grid-template-columns: 1fr; }
+  .producto-info { position: static; }
+  .producto-fotos { grid-template-columns: 1fr 1fr; }
+  .rutas-grilla { grid-template-columns: 1fr; }
+  .rutas-grilla img { aspect-ratio: 16 / 10; }
+  .pie-columnas { grid-template-columns: 1fr 1fr; }
+}

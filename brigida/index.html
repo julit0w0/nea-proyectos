@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Brígida · Cocina a las brasas</title>
+<meta name="description" content="Brígida: cocina de fuego para cuarenta personas. Solo con reserva. Proyecto de concepto de NEA Sistemas.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F1ECE4">
+<link rel="preload" href="assets/fonts/librecaslontext-400-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts/caslon.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <!-- Juncos: la cruz de Santa Brígida abstraída a cuatro pares de líneas en molinete, sin centro (logo B, 10-11-2026) -->
+  <symbol id="cruz" viewBox="0 0 100 100">
+    <g fill="currentColor">
+      <rect x="30" y="0" width="7" height="44"/><rect x="42" y="0" width="7" height="44"/>
+      <rect x="56" y="30" width="44" height="7"/><rect x="56" y="42" width="44" height="7"/>
+      <rect x="51" y="56" width="7" height="44"/><rect x="63" y="56" width="7" height="44"/>
+      <rect x="0" y="51" width="44" height="7"/><rect x="0" y="63" width="44" height="7"/>
+    </g>
+  </symbol>
+  <!-- Un junco suelto (par de líneas) para la iconografía de fondo -->
+  <symbol id="junco" viewBox="0 0 19 100" preserveAspectRatio="none">
+    <g fill="currentColor"><rect x="0" y="0" width="7" height="100"/><rect x="12" y="0" width="7" height="100"/></g>
+  </symbol>
+</svg>
+
+<header class="barra">
+  <a class="logo" href="#inicio"><svg aria-hidden="true"><use href="#cruz"/></svg><span>Brígida</span></a>
+  <nav aria-label="Secciones">
+    <a href="#carta">Carta</a>
+    <a href="#noches">Noches</a>
+    <a href="#lugar">El lugar</a>
+    <a href="#reservar" class="nav-reservar">Reservar</a>
+  </nav>
+</header>
+
+<main>
+  <section class="portada" id="inicio" aria-label="Esta semana">
+    <div class="afiche afiche-brasa">
+      <p class="afiche-chico">Esta semana · <span data-semana></span></p>
+      <svg class="afiche-cruz" aria-hidden="true"><use href="#cruz"/></svg>
+      <div class="juncos" aria-hidden="true">
+        <svg class="j1"><use href="#junco"/></svg><svg class="j2"><use href="#junco"/></svg>
+        <svg class="j3"><use href="#junco"/></svg><svg class="j4"><use href="#junco"/></svg>
+      </div>
+      <h1 class="afiche-titulo">Pescado<br>de <em>río</em>,<br>puerros<br>en <em>ceniza</em>.</h1>
+      <p class="afiche-pie">Cocina a las brasas. Cuarenta cubiertos.<br>Martes a sábado, solo con reserva.</p>
+    </div>
+    <figure class="portada-foto">
+      <img src="assets/img/servicio.jpg" alt="La barra llena durante el servicio, con los cocineros emplatando frente al fuego">
+    </figure>
+  </section>
+
+  <section class="intro">
+    <p>Brígida es una cocina de fuego para cuarenta personas. La carta es corta y cambia según lo que llega del río y de la huerta. <em>Si no hay, no hay.</em></p>
+    <a class="enlace" href="#reservar">Reservar una mesa →</a>
+  </section>
+
+  <section class="carta" id="carta" aria-labelledby="carta-titulo">
+    <div class="hoja">
+      <header class="hoja-cabeza">
+        <svg aria-hidden="true"><use href="#cruz"/></svg>
+        <h2 id="carta-titulo">Carta</h2>
+        <p data-fecha-hoy></p>
+      </header>
+      <h3>Para empezar</h3>
+      <ul>
+        <li><span>Pan de masa madre a la brasa, manteca ahumada</span><b>6.500</b></li>
+        <li><span>Puerros en ceniza, aceite, sal en escamas</span><b>12.000</b></li>
+        <li class="agotado"><span>Mollejas, limón quemado</span><b>no hay</b></li>
+      </ul>
+      <h3>Del fuego</h3>
+      <ul>
+        <li><span>Pescado de río entero, salsa de su jugo</span><b>28.000</b></li>
+        <li><span>Ojo de bife, 400 g</span><b>34.000</b></li>
+        <li><span>Costilla de cerdo, seis horas sobre brasa</span><b>26.000</b></li>
+        <li><span>Batatas en el rescoldo, crema ácida</span><b>9.000</b></li>
+      </ul>
+      <h3>Para terminar</h3>
+      <ul>
+        <li><span>Fruta del día al rescoldo, helado de crema</span><b>9.500</b></li>
+        <li><span>Flan, caramelo quemado</span><b>8.000</b></li>
+      </ul>
+      <p class="hoja-pie">Precios en pesos. La carta se escribe cada tarde.</p>
+    </div>
+  </section>
+
+  <section class="fotos" aria-label="Fotos">
+    <figure class="f-mesa"><img src="assets/img/mesa.jpg" alt="Mesa de mediodía vista desde arriba, con platos para compartir" loading="lazy">
+      <figcaption>Todo se comparte.</figcaption></figure>
+    <figure class="f-rio"><img src="assets/img/rio.jpg" alt="Un pescador en un bote sostiene un pescado de río al amanecer" loading="lazy">
+      <figcaption>El pescado llega del río a las seis.</figcaption></figure>
+    <figure class="f-fuego"><img src="assets/img/fuego.jpg" alt="Un cocinero prepara el fuego por la tarde, antes del servicio" loading="lazy">
+      <figcaption>El fuego se prende a las cuatro.</figcaption></figure>
+    <figure class="f-plato"><img src="assets/img/puerros.jpg" alt="Puerros cocidos en las brasas, en un plato blanco al sol" loading="lazy">
+      <figcaption>Puerros en ceniza.</figcaption></figure>
+  </section>
+
+  <section class="noches" id="noches" aria-labelledby="noches-titulo">
+    <h2 id="noches-titulo" class="titulo">Noches</h2>
+    <p class="bajada">Una vez por mes cocina alguien de afuera. Mismo fuego, otra carta.</p>
+    <div class="afiches">
+      <article class="afiche afiche-mostaza">
+        <svg class="afiche-cruz cruz-a" aria-hidden="true"><use href="#cruz"/></svg>
+        <p class="afiche-chico">Jueves 20 de noviembre</p>
+        <h3 class="afiche-titulo">Cocina<br><em>Ana</em><br>Ferreyra</h3>
+        <p class="afiche-pie">Humo y frutas del monte</p>
+      </article>
+      <article class="afiche afiche-verde">
+        <svg class="afiche-cruz cruz-b" aria-hidden="true"><use href="#cruz"/></svg>
+        <p class="afiche-chico">Jueves 11 de diciembre</p>
+        <h3 class="afiche-titulo">Noche<br>de <em>vinos</em><br>naturales</h3>
+        <p class="afiche-pie">Con tres bodegas chicas</p>
+      </article>
+      <article class="afiche afiche-bordo">
+        <svg class="afiche-cruz cruz-c" aria-hidden="true"><use href="#cruz"/></svg>
+        <p class="afiche-chico">Sábado 27 de diciembre</p>
+        <h3 class="afiche-titulo">El <em>último</em><br>fuego<br>del año</h3>
+        <p class="afiche-pie">Una sola mesa larga</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="reservar" id="reservar" aria-labelledby="reservar-titulo">
+    <div class="reservar-cabeza">
+      <h2 id="reservar-titulo" class="titulo">Reservar</h2>
+      <p class="bajada">Elige un horario libre. La mesa se guarda quince minutos.</p>
+    </div>
+    <div class="libro" data-reserva>
+      <div class="libro-personas">
+        <span>Mesa para</span>
+        <button type="button" data-menos aria-label="Una persona menos">−</button>
+        <output data-personas aria-live="polite">2</output>
+        <button type="button" data-mas aria-label="Una persona más">+</button>
+        <span data-personas-palabra>personas</span>
+      </div>
+      <div class="libro-tabla-caja">
+        <table class="libro-tabla">
+          <thead><tr data-dias></tr></thead>
+          <tbody data-horas></tbody>
+        </table>
+      </div>
+      <p class="libro-nota" aria-live="polite" data-vivo>La disponibilidad cambia mientras miras.</p>
+      <div class="libro-confirmar" data-confirmar hidden>
+        <p data-resumen></p>
+        <button type="button" class="boton" data-confirmar-boton>Confirmar reserva</button>
+      </div>
+      <div class="libro-listo" data-listo hidden role="status">
+        <p class="libro-listo-titulo" data-listo-texto></p>
+        <p>Te confirmamos por WhatsApp.</p>
+        <p class="aviso">Esto es una demostración: Brígida es un proyecto de concepto de NEA Sistemas y no toma reservas reales.</p>
+        <button type="button" class="enlace" data-otra>Hacer otra reserva</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="lugar" id="lugar" aria-labelledby="lugar-titulo">
+    <figure class="lugar-foto"><img src="assets/img/salon.jpg" alt="El salón a la mañana, antes de abrir, con la barra de madera y el fuego al fondo" loading="lazy"></figure>
+    <div class="lugar-texto">
+      <h2 id="lugar-titulo" class="titulo">El lugar</h2>
+      <dl>
+        <div><dt>Horario</dt><dd>Martes a sábado, de 20 a 0 h</dd></div>
+        <div><dt>Mesas</dt><dd>Cuarenta cubiertos y una barra frente al fuego</dd></div>
+        <div><dt>Grupos</dt><dd>Hasta seis personas por mesa</dd></div>
+        <div><dt>Reservas</dt><dd>Solo por esta página</dd></div>
+      </dl>
+    </div>
+    <figure class="lugar-equipo"><img src="assets/img/equipo.jpg" alt="El equipo de Brígida en la vereda, frente a la puerta" loading="lazy">
+      <figcaption>El equipo, un martes a las seis.</figcaption></figure>
+  </section>
+</main>
+
+<footer class="pie">
+  <svg class="pie-cruz" aria-hidden="true"><use href="#cruz"/></svg>
+  <p class="pie-nombre">Brígida</p>
+  <p class="pie-aviso">Proyecto de concepto: Brígida no es un restaurante real.<br>
+    Identidad, sitio y sistema de reservas por <a href="https://www.neasistemas.com.ar">NEA Sistemas</a>.</p>
+</footer>
+
+<script src="app.js" defer></script>
+</body>
+</html>

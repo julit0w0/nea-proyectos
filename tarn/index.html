@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tarn · Indumentaria de trail running</title>
+<meta name="description" content="Tarn: indumentaria técnica de trail running, venta directa. Proyecto de concepto de NEA Sistemas.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F4F4F2">
+<link rel="preload" href="assets/fonts/archivo-400_900-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts/fuentes.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<p class="aviso-barra">Envío gratis a todo el país desde $120.000 · Cambios sin costo por 30 días</p>
+
+<header class="barra">
+  <!-- Logo C elegido por Julián (tarn/logo/opciones.png): curvas de nivel + TARN -->
+  <a class="logo" href="#inicio" aria-label="Tarn, inicio">
+    <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" aria-hidden="true"><path d="M8 78 C 25 40, 45 22, 60 30 S 88 62, 94 78"/><path d="M24 78 C 36 52, 50 42, 60 48 S 78 66, 82 78"/><path d="M40 78 C 47 64, 55 60, 61 64 S 69 72, 71 78"/></svg>
+    <span>TARN</span>
+  </a>
+  <nav class="menu" aria-label="Categorías">
+    <a href="#productos">Hombre</a>
+    <a href="#productos">Mujer</a>
+    <a href="#productos">Accesorios</a>
+    <a href="#rutas">Rutas</a>
+  </nav>
+  <div class="acciones">
+    <a href="#productos">Buscar</a>
+    <button type="button" data-abrir-carrito>Carrito (<span data-cantidad>0</span>)</button>
+  </div>
+</header>
+
+<main>
+  <section class="campana" id="inicio" aria-label="Colección Otoño 26">
+    <img src="assets/img/campana.jpg" alt="Un corredor sobre una cresta de montaña al amanecer">
+    <div class="campana-texto">
+      <p>Colección Otoño 26</p>
+      <h1>Hecho para la cuesta.</h1>
+      <div class="campana-botones">
+        <a class="boton boton-claro" href="#productos">Comprar hombre</a>
+        <a class="boton boton-claro" href="#productos">Comprar mujer</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="productos" id="productos" aria-labelledby="productos-titulo">
+    <div class="cabeza">
+      <h2 id="productos-titulo">Lo nuevo</h2>
+      <a href="#productos">Ver todo</a>
+    </div>
+    <ul class="grilla" data-grilla></ul>
+  </section>
+
+  <section class="destacado" aria-labelledby="destacado-titulo">
+    <img src="assets/img/tela.jpg" alt="Tela ripstop naranja con gotas de agua" loading="lazy">
+    <div class="destacado-texto">
+      <p class="etiqueta">Cortaviento Cresta</p>
+      <h2 id="destacado-titulo">92 gramos. Entra en el bolsillo del short.</h2>
+      <p>Ripstop 10D con tratamiento repelente al agua. Corta el viento en la cumbre y se guarda en su propio bolsillo cuando empieza la bajada.</p>
+      <a class="boton" href="#producto">Ver el cortaviento</a>
+    </div>
+  </section>
+
+  <section class="producto" id="producto" aria-labelledby="producto-titulo">
+    <div class="producto-fotos">
+      <img src="assets/img/p-cortaviento.jpg" alt="Cortaviento Cresta naranja, de frente">
+      <img src="assets/img/p-cortaviento-espalda.jpg" alt="Cortaviento Cresta naranja, de espalda" loading="lazy">
+      <img src="assets/img/tela.jpg" alt="Detalle de la tela con gotas" loading="lazy">
+      <img src="assets/img/manos.jpg" alt="Ajustando el chaleco sobre el cortaviento al amanecer" loading="lazy">
+    </div>
+    <div class="producto-info">
+      <p class="etiqueta">Hombre · Capas</p>
+      <h2 id="producto-titulo">Cortaviento Cresta</h2>
+      <p class="precio">$89.000 <small>o 3 cuotas sin interés de $29.667</small></p>
+      <fieldset class="opcion">
+        <legend>Color: <span data-color-nombre>Señal</span></legend>
+        <div class="colores">
+          <button type="button" class="color" style="--c:#FF4F1F" aria-pressed="true" data-color="Señal" aria-label="Señal"></button>
+          <button type="button" class="color" style="--c:#111111" aria-pressed="false" data-color="Negro" aria-label="Negro"></button>
+        </div>
+      </fieldset>
+      <fieldset class="opcion">
+        <legend>Talle <a href="#producto" class="guia">Guía de talles</a></legend>
+        <div class="talles" data-talles>
+          <button type="button" aria-pressed="false">XS</button>
+          <button type="button" aria-pressed="false">S</button>
+          <button type="button" aria-pressed="true">M</button>
+          <button type="button" aria-pressed="false">L</button>
+          <button type="button" aria-pressed="false" disabled>XL</button>
+        </div>
+        <p class="nota-talle">XL agotado · Vuelve en diciembre</p>
+      </fieldset>
+      <button type="button" class="boton boton-senal" data-agregar>Agregar al carrito</button>
+      <dl class="ficha">
+        <div><dt>Peso</dt><dd>92 g (talle M)</dd></div>
+        <div><dt>Tela</dt><dd>Ripstop de nailon 10D</dd></div>
+        <div><dt>Tratamiento</dt><dd>Repelente al agua, sin PFC</dd></div>
+        <div><dt>Bolsillos</dt><dd>1 de pecho, se guarda en sí mismo</dd></div>
+        <div><dt>Calce</dt><dd>Regular, para usar sobre remera o chaleco</dd></div>
+      </dl>
+      <details><summary>Envíos y cambios</summary><p>Envío en 3 a 5 días hábiles. Si el talle no te queda, lo cambias sin costo dentro de los 30 días.</p></details>
+      <details><summary>Cuidado</summary><p>Lavar a mano en agua fría. No usar suavizante. Secar a la sombra.</p></details>
+    </div>
+  </section>
+
+  <section class="rutas" id="rutas" aria-labelledby="rutas-titulo">
+    <div class="cabeza">
+      <h2 id="rutas-titulo">Rutas</h2>
+      <a href="#rutas">Ver todas</a>
+    </div>
+    <div class="rutas-grilla">
+      <article><img src="assets/img/ruta-lagos.jpg" alt="Sendero de altura sobre una laguna glaciar" loading="lazy"><h3>Travesía de las tres lagunas</h3><p>24 km · 1.450 m de desnivel · Difícil</p></article>
+      <article><img src="assets/img/ruta-barro.jpg" alt="Corredor bajando por un sendero con barro" loading="lazy"><h3>Bajada del bosque, con lluvia</h3><p>12 km · 620 m de desnivel · Media</p></article>
+      <article><img src="assets/img/ruta-chaleco.jpg" alt="Chaleco de hidratación sobre una roca" loading="lazy"><h3>Qué llevar en una salida de 4 horas</h3><p>Guía · 6 minutos de lectura</p></article>
+    </div>
+  </section>
+
+  <section class="lanzamiento" aria-labelledby="lanzamiento-titulo">
+    <div>
+      <p class="etiqueta">Próximo lanzamiento · 28 de noviembre</p>
+      <h2 id="lanzamiento-titulo">Capa Impermeable</h2>
+      <p>Tres capas, 210 gramos, costuras selladas. Sale en una sola tanda.</p>
+    </div>
+    <form class="avisame" data-avisame>
+      <label for="tel">Te avisamos por WhatsApp cuando salga</label>
+      <div class="avisame-fila">
+        <input id="tel" type="tel" inputmode="tel" placeholder="Tu número" autocomplete="tel" required>
+        <button type="submit" class="boton boton-claro">Avisarme</button>
+      </div>
+      <p class="avisame-ok" data-avisame-ok hidden role="status">Listo. Es una demostración: Tarn es un proyecto de concepto y no guarda tu número.</p>
+    </form>
+  </section>
+</main>
+
+<footer class="pie">
+  <div class="pie-columnas">
+    <div><p class="pie-titulo">Ayuda</p><a href="#producto">Envíos</a><a href="#producto">Cambios</a><a href="#producto">Guía de talles</a></div>
+    <div><p class="pie-titulo">Tarn</p><a href="#rutas">Rutas</a><a href="#inicio">Nosotros</a></div>
+    <div><p class="pie-titulo">Pagos</p><p>Tarjetas de crédito y débito, transferencia y Mercado Pago.</p></div>
+  </div>
+  <p class="pie-aviso">Proyecto de concepto: Tarn no es una marca real ni vende productos. Identidad, tienda y campaña por <a href="https://www.neasistemas.com.ar">NEA Sistemas</a>.</p>
+</footer>
+
+<aside class="carrito" data-carrito aria-label="Carrito" hidden>
+  <div class="carrito-cabeza"><p>Tu carrito</p><button type="button" data-cerrar-carrito aria-label="Cerrar el carrito">Cerrar</button></div>
+  <ul data-items></ul>
+  <div class="carrito-pie">
+    <p class="subtotal">Subtotal <span data-subtotal>$0</span></p>
+    <p class="envio" data-envio></p>
+    <button type="button" class="boton boton-senal" data-finalizar>Finalizar compra</button>
+    <p class="demo" data-demo hidden>Es una demostración: Tarn es un proyecto de concepto de NEA Sistemas y no vende productos.</p>
+  </div>
+</aside>
+<div class="velo" data-velo hidden></div>
+
+<script src="app.js" defer></script>
+</body>
+</html>
