@@ -17,14 +17,21 @@
   /* ---------- Recorridos ---------- */
   const detenidos = new WeakSet();
   const aLaVista = new WeakSet();
+  const enPestanaActiva = (v) => { const p = v.closest('.visor__panel'); return !p || p.classList.contains('is-activo'); };
   const mover = (v) => {
-    if (aLaVista.has(v) && !detenidos.has(v)) v.play().catch(() => { /* el navegador puede negarlo: queda el póster */ });
+    if (aLaVista.has(v) && enPestanaActiva(v) && !detenidos.has(v)) v.play().catch(() => { /* el navegador puede negarlo: queda el póster */ });
     else v.pause();
   };
   document.querySelectorAll('[data-pausa-recorrido]').forEach((boton) => {
-    const video = boton.closest('figure').querySelector('video');
+    const video = boton.closest('.caso__visor, .caso__movil').querySelector('video');
+    const panel = video.closest('.visor__panel');
     const nombre = boton.getAttribute('aria-label').replace('Pausar ', '');
     boton.hidden = false;
+    if (panel) {
+      /* El de escritorio comparte el visor con otras pantallas: fuera de su pestaña se frena y el botón no hace falta. */
+      const alCambiarPestana = () => { boton.hidden = !enPestanaActiva(video); mover(video); };
+      new MutationObserver(alCambiarPestana).observe(panel, { attributes: true, attributeFilter: ['class'] });
+    }
     boton.addEventListener('click', () => {
       const pausado = boton.textContent === 'Pausar';
       boton.textContent = pausado ? 'Reanudar' : 'Pausar';
@@ -48,11 +55,17 @@
 
   /* La entrada espera a que la primera pantalla esté lista, para que no se abra en blanco (como mucho, ESPERA_MAX). */
   const ESPERA_MAX = 1500;
-  const portadaDe = (banda) => banda.querySelector('.visor__panel.is-activo img, .visor__panel img');
+  const portadaDe = (banda) => {
+    const video = banda.querySelector('.caso__visor video');
+    if (!video) return banda.querySelector('.visor__panel.is-activo img, .visor__panel img');
+    const img = new Image();
+    img.src = video.poster;
+    return img;
+  };
   const lista = (img) => {
     if (!img) return Promise.resolve();
     const tope = new Promise((ok) => { setTimeout(ok, ESPERA_MAX); });
-    return Promise.race([img.decode().catch(() => { /* si no carga, entra igual y queda el texto alternativo */ }), tope]);
+    return Promise.race([img.decode().catch(() => { /* si no carga, entra igual */ }), tope]);
   };
   const precarga = new IntersectionObserver((entradas) => entradas.forEach((en) => {
     if (!en.isIntersecting) return;
@@ -69,7 +82,7 @@
   }), { threshold: 0.18 });
   bandas.forEach((b) => llegadas.observe(b));
 
-  /* ---------- Paso por la pantalla, para el corrimiento leve del celular y las piezas (solo las bandas cercanas) ---------- */
+  /* ---------- Paso por la pantalla, para el corrimiento leve del celular (solo las bandas cercanas) ---------- */
   const cerca = new Set();
   let pedido = 0;
   const acotar = (n) => Math.min(1, Math.max(0, n));

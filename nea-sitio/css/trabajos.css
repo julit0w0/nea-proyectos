@@ -8,9 +8,9 @@
   background: linear-gradient(var(--antes) 50%, var(--despues) 50%);
   overflow: clip;
 }
-.banda--negro { --antes: var(--color-blanco); --despues: var(--color-lima); --fondo: var(--color-negro); --t: var(--color-blanco); --t2: var(--gris); --linea: var(--filete); --acento: var(--color-lima); --pieza: var(--color-electrico); }
-.banda--lima { --antes: var(--color-negro); --despues: var(--color-electrico); --fondo: var(--color-lima); --t: var(--color-negro); --t2: color-mix(in srgb, var(--color-negro) 78%, var(--color-lima)); --linea: color-mix(in srgb, var(--color-negro) 26%, var(--color-lima)); --acento: var(--color-negro); --pieza: var(--color-negro); }
-.banda--azul { --antes: var(--color-lima); --despues: var(--color-negro); --fondo: var(--color-electrico); --t: var(--color-blanco); --t2: var(--color-blanco); --linea: color-mix(in srgb, var(--color-blanco) 45%, var(--color-electrico)); --acento: var(--color-lima); --pieza: var(--color-lima); }
+.banda--negro { --antes: var(--color-blanco); --despues: var(--color-lima); --fondo: var(--color-negro); --t: var(--color-blanco); --t2: var(--gris); --linea: var(--filete); --acento: var(--color-lima); }
+.banda--lima { --antes: var(--color-negro); --despues: var(--color-electrico); --fondo: var(--color-lima); --t: var(--color-negro); --t2: color-mix(in srgb, var(--color-negro) 78%, var(--color-lima)); --linea: color-mix(in srgb, var(--color-negro) 26%, var(--color-lima)); --acento: var(--color-negro); }
+.banda--azul { --antes: var(--color-lima); --despues: var(--color-negro); --fondo: var(--color-electrico); --t: var(--color-blanco); --t2: var(--color-blanco); --linea: color-mix(in srgb, var(--color-blanco) 45%, var(--color-electrico)); --acento: var(--color-lima); }
 .banda__forma {
   background: var(--fondo); color: var(--t);
   border-radius: 0 var(--r) 0 var(--r);
@@ -30,16 +30,11 @@
 .caso__meta .enlace__dir { color: var(--t2); }
 .caso__meta .rotulo { border-radius: 99rem; padding: 0.4em 0.85em; }
 
-/* ---------- Pantalla de escritorio, con una pieza del logo asomando atrás ---------- */
-.caso__visor { grid-area: visor; position: relative; isolation: isolate; --asoma: clamp(0.75rem, 2vw, 2.25rem); }
-.caso__visor::before {
-  content: ""; position: absolute; z-index: -1; top: calc(var(--asoma) * -1); left: calc(var(--asoma) * -1);
-  width: 44%; aspect-ratio: 1; background: var(--pieza); border-radius: 0 100% 0 0;
-  transform: translate(calc((var(--v) - 0.5) * -2.5rem), calc((var(--v) - 0.5) * 2.5rem));
-}
-.caso--inverso .caso__visor::before { left: auto; right: calc(var(--asoma) * -1); border-radius: 0 100% 0 0; transform: translate(calc((var(--v) - 0.5) * 2.5rem), calc((var(--v) - 0.5) * 2.5rem)); }
+/* ---------- Pantalla de escritorio ---------- */
+.caso__visor { grid-area: visor; }
 .caso__visor .visor__marco { overflow: clip; border-radius: clamp(0.6rem, 1.1vw, 1.25rem); background: var(--color-blanco); }
 .caso__visor .visor__panel img { border: 0; }
+.caso__visor .visor__panel video { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: top; }
 .caso__visor .visor__tab { color: var(--t2); }
 .caso__visor .visor__tab::before { background: var(--linea); border-radius: 2px; }
 .caso__visor .visor__tab::after { background: var(--acento); border-radius: 2px; transition: transform 0.45s var(--curva); }
@@ -50,8 +45,8 @@
 .caso__telefono { overflow: clip; border-radius: clamp(0.9rem, 1.6vw, 1.75rem); background: var(--color-blanco); }
 .caso__telefono video { display: block; width: 100%; aspect-ratio: 9 / 16; object-fit: cover; object-position: top; }
 .caso__movil figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0 var(--space-3); margin-top: var(--space-2); font-size: var(--fs-m1); color: var(--t2); line-height: 1.3; }
-.caso__movil .visor__pausa { color: var(--t); }
-.caso__movil .visor__pausa:hover { color: var(--t); text-decoration-color: transparent; }
+.caso .visor__pausa { color: var(--t); }
+.caso .visor__pausa:hover { color: var(--t); text-decoration-color: transparent; }
 
 @media (min-width: 700px) {
   .caso { grid-template-columns: minmax(0, 8fr) minmax(0, 3fr); grid-template-areas: "meta ." "visor movil"; column-gap: var(--space-6); }
@@ -72,11 +67,9 @@
 .mov .caso__meta > :not(.caso__nombre) { opacity: 0; transform: translateY(0.8rem); transition: opacity 0.6s ease 0.2s, transform 0.8s var(--curva) 0.2s; }
 .mov .caso__visor .visor__marco { clip-path: circle(0% at 0% 100%); transition: clip-path 1.2s cubic-bezier(0.65, 0, 0.2, 1) 0.1s; }
 .mov .caso--inverso .caso__visor .visor__marco { clip-path: circle(0% at 100% 0%); }
-.mov .caso__visor::before { opacity: 0; transition: opacity 0.6s ease 0.7s; }
 .mov .caso__telefono { clip-path: inset(100% 0 0 0); transition: clip-path 1s cubic-bezier(0.65, 0, 0.2, 1) 0.45s; }
 .mov .is-llegada .caso__nombre span { transform: none; }
 .mov .is-llegada .caso__meta > :not(.caso__nombre) { opacity: 1; transform: none; }
 .mov .is-llegada .caso__visor .visor__marco { clip-path: circle(150% at 0% 100%); }
 .mov .is-llegada .caso--inverso .caso__visor .visor__marco { clip-path: circle(150% at 100% 0%); }
-.mov .is-llegada .caso__visor::before { opacity: 1; }
 .mov .is-llegada .caso__telefono { clip-path: inset(0 0 0 0); }

@@ -12,22 +12,14 @@
 /* ---------- 1 · Portada: el panel es una pieza del logo ---------- */
 .portada__panel {
   --r: clamp(2rem, 6vw, 5.5rem);
-  position: relative; isolation: isolate; background: var(--color-electrico);
+  position: relative; isolation: isolate; background: var(--color-blanco);
 }
 .portada__panel::before {
   content: ""; position: absolute; inset: 0; z-index: -1; background: var(--color-negro);
   border-radius: 0 0 0 var(--r);
 }
-.portada__panel .visor { position: relative; isolation: isolate; }
-.portada__panel .visor::before {
-  --asoma: clamp(0.6rem, 1.6vw, 1.9rem);
-  content: ""; position: absolute; z-index: -1; right: calc(var(--asoma) * -1); top: calc(2.75rem + var(--space-3) - var(--asoma));
-  width: 38%; aspect-ratio: 1; background: var(--color-lima); border-radius: 0 100% 0 0;
-}
 .portada__panel .visor__panel img { border: 0; border-radius: clamp(0.6rem, 1.1vw, 1.25rem); }
-.mov .portada__panel .visor::before { animation: asoma 0.9s 0.9s var(--curva) both; }
 .mov .portada__panel .visor__marco { animation: abre 1.2s 0.25s cubic-bezier(0.65, 0, 0.2, 1) both; }
-@keyframes asoma { from { transform: translate(-1.5rem, 1.5rem); opacity: 0; } }
 @keyframes abre { from { clip-path: circle(0% at 0% 100%); } to { clip-path: circle(150% at 0% 100%); } }
 @media (max-width: 899px) {
   .portada__panel { padding-bottom: calc(clamp(1.25rem, 3vw, 4rem) + var(--r) * 0.4); }
@@ -42,18 +34,7 @@
 
 /* ---------- 3 · Qué hacemos ---------- */
 .cap__cuadro { border: 0; border-radius: 1.25rem; }
-.cap__panel:nth-child(odd) .cap__cuadro { border-radius: 1.25rem clamp(2rem, 6vw, 5.5rem) 1.25rem 1.25rem; }
-.cap__panel:nth-child(even) .cap__cuadro { border-radius: 1.25rem 1.25rem 1.25rem clamp(2rem, 6vw, 5.5rem); }
-.cap__muestra { position: relative; isolation: isolate; }
-.cap__muestra::before {
-  --asoma: clamp(0.6rem, 1.4vw, 1.6rem);
-  content: ""; position: absolute; z-index: -1; width: 44%; aspect-ratio: 1;
-  left: calc(var(--asoma) * -1); top: calc(var(--asoma) * -1); background: var(--pieza, var(--color-lima)); border-radius: 0 100% 0 0;
-}
-.cap__panel:nth-child(even) .cap__muestra::before { left: auto; right: calc(var(--asoma) * -1); --pieza: var(--color-electrico); }
-.mov .cap__muestra::before { transform: translate(1.5rem, 1.5rem); transition: transform 0.8s var(--curva) 0.1s; }
-.mov .cap__panel:nth-child(even) .cap__muestra::before { transform: translate(-1.5rem, 1.5rem); }
-.mov .cap__panel.is-activo .cap__muestra::before { transform: none; }
+.cap__cuadro { border-radius: 1.25rem clamp(2rem, 6vw, 5.5rem) 1.25rem 1.25rem; }
 .mov .cap__nombre { transition: transform 0.4s var(--curva); }
 .mov .cap__tab[aria-selected="true"] .cap__nombre { transform: translateX(0.35rem); }
 .mov .cap__entregables li { opacity: 0; transform: translateY(0.6rem); transition: opacity 0.4s ease, transform 0.5s var(--curva); }
@@ -62,30 +43,73 @@
 .mov .cap__panel.is-activo .cap__entregables li:nth-child(3) { transition-delay: 0.14s; }
 .mov .cap__panel.is-activo .cap__entregables li:nth-child(4) { transition-delay: 0.21s; }
 
-/* ---------- 4 · Cómo trabajamos: mosaico ---------- */
-.como { padding-block: clamp(4rem, 8vw, var(--space-10)) 0; }
-.principios { gap: 0; background: none; border: 0; }
-.principio, .principio:nth-child(odd):not(.principio--cierre), .principio:nth-child(3n + 1) {
-  position: relative; isolation: isolate; justify-content: space-between;
-  padding: clamp(1.5rem, 2.6vw, 3rem) var(--margen) clamp(1.75rem, 3vw, 3.25rem) !important;
-  min-height: clamp(15rem, 27vw, 27rem); background: var(--detras); color: var(--t);
+/* Pantalla completa: mientras se recorre la sección, el contenido queda fijo y el scroll pasa de un área a la otra.
+   principal.js pone .es-fija (con movimiento permitido y alto suficiente); sin ella, las áreas se cambian con un clic. */
+.es-fija { --alto: calc(100svh - var(--alto-cab)); --paso: 65svh; scroll-margin-top: -1rem; }
+.es-fija .banda__forma { height: calc(var(--alto) + var(--areas, 4) * var(--paso)); padding-block: 0; }
+.es-fija .caja {
+  position: sticky; top: var(--alto-cab); height: var(--alto);
+  display: flex; flex-direction: column; padding-block: clamp(1.25rem, 5vh, 3.5rem);
 }
-.principio::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--fondo); border-radius: 0 clamp(2rem, 6vw, 5.5rem) 0 0; }
-.principio .num { color: var(--t); }
+.es-fija .sec__titulo { margin-bottom: clamp(0.75rem, 2.5vh, 2rem); }
+.es-fija .cap { flex: 1; min-height: 0; grid-template-rows: auto minmax(0, 1fr); align-items: stretch; gap: clamp(0.75rem, 2.5vh, 2rem) var(--space-7); }
+.es-fija .cap__tab { min-height: 2.75rem; padding: 0.6rem 0; }
+.es-fija .cap__paneles { min-height: 0; grid-template-rows: minmax(0, 1fr); }
+.es-fija .cap__panel { min-height: 0; height: 100%; grid-template-rows: minmax(0, 1fr) auto; gap: clamp(0.5rem, 1.5vh, 1.25rem) var(--space-6); align-content: stretch; }
+.es-fija .cap__muestra { min-height: 0; container-type: size; }
+/* Llena el lugar disponible sin recortar de más la muestra, que es cuadrada. */
+.es-fija .cap__muestra > * { --h: min(100cqh - 3.5rem, 112cqw); width: min(100cqw, var(--h) * 1.2); }
+.es-fija .cap__cuadro { aspect-ratio: auto; height: var(--h); }
+.es-fija .cap__muestra figcaption { margin-top: 0.5rem; min-height: 3rem; flex-wrap: nowrap; }
+@media (max-width: 599px), (max-width: 999px) and (orientation: portrait) {
+  .es-fija .cap__panel { grid-template-columns: minmax(0, 1fr); }
+  .es-fija .cap__entregables { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--space-4); }
+  .es-fija .cap__entregables li { padding: 0.5rem 0; font-size: 1rem; border-bottom: 0; }
+}
+@media (min-width: 600px) and (orientation: landscape), (min-width: 1000px) { .es-fija .cap__panel { grid-template-rows: minmax(0, 1fr); } }
+@media (min-width: 1000px) {
+  .es-fija .sec__titulo { position: absolute; margin: 0; }
+  .es-fija .cap { grid-template-columns: minmax(0, 3.4fr) minmax(0, 8.6fr); grid-template-rows: minmax(0, 1fr); }
+  .es-fija .cap__lista { align-content: end; padding-bottom: 3.5rem; }
+  .es-fija .cap__tab { padding: clamp(0.6rem, 1.8vh, 1.15rem) 0; }
+  .es-fija .cap__panel { grid-template-columns: minmax(0, 1fr) clamp(11rem, 17vw, 17rem); }
+  .es-fija .cap__detalle { align-self: end; padding-bottom: 3.5rem; }
+}
+/* El cambio: la pantalla nueva tapa a la anterior en el sentido del scroll. */
+.es-fija .cap__panel { opacity: 1; z-index: 0; transition: visibility 0s 0.7s; }
+.es-fija .cap__panel.is-activo { z-index: 1; transition: none; }
+.es-fija .cap__panel:not(.is-activo) .cap__detalle, .es-fija .cap__panel:not(.is-activo) figcaption { opacity: 0; transition: none; }
+.es-fija .cap__panel.is-activo figcaption { opacity: 1; transition: opacity 0.4s ease 0.25s; }
+.es-fija .cap[data-sentido="baja"] .cap__panel.is-activo .cap__cuadro { animation: cubre-baja 0.7s cubic-bezier(0.65, 0, 0.2, 1) both; }
+.es-fija .cap[data-sentido="sube"] .cap__panel.is-activo .cap__cuadro { animation: cubre-sube 0.7s cubic-bezier(0.65, 0, 0.2, 1) both; }
+@keyframes cubre-baja { from { clip-path: inset(100% 0 0 0); } to { clip-path: inset(0); } }
+@keyframes cubre-sube { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0); } }
+
+/* ---------- 4 · Cómo trabajamos: tarjetas parejas ---------- */
+/* Bordes rectos: Qué hacemos y la frase, arriba y abajo (y el final del último trabajo, que toca Qué hacemos). */
+.banda--que .banda__forma, .banda--frase .banda__forma { border-radius: 0; }
+.banda--azul .banda__forma { border-bottom-left-radius: 0; }
+.como { padding-block: clamp(4rem, 9vw, 8.5rem); }
+.principios { display: grid; gap: clamp(0.75rem, 1.2vw, 1.25rem); grid-template-columns: minmax(0, 1fr); }
+.principio {
+  display: flex; flex-direction: column; justify-content: space-between; gap: 2rem;
+  padding: clamp(1.4rem, 2vw, 2rem); border-radius: 1.25rem; background: var(--velo-tinta);
+}
+.principio:first-child { background: var(--color-negro); color: var(--color-blanco); }
+.principio:first-child .num { color: var(--gris); }
 .principio__cuerpo { display: grid; gap: var(--space-3); }
-.principio__titulo { font-size: clamp(var(--fs-3), 2.6vw, var(--fs-4)); }
-.principio:nth-child(1) { --fondo: var(--color-lima); --detras: var(--color-negro); --t: var(--color-negro); }
-.principio:nth-child(2) { --fondo: var(--color-negro); --detras: var(--color-electrico); --t: var(--color-blanco); }
-.principio:nth-child(3) { --fondo: var(--color-electrico); --detras: var(--color-blanco); --t: var(--color-blanco); }
-.principio:nth-child(4) { --fondo: var(--color-negro); --detras: var(--color-lima); --t: var(--color-blanco); }
-.principio:nth-child(5) { --fondo: var(--color-blanco); --detras: var(--color-negro); --t: var(--color-negro); }
-.principio:nth-child(6) { --fondo: var(--color-lima); --detras: var(--color-electrico); --t: var(--color-negro); }
-.principio--cierre p { font-size: clamp(var(--fs-3), 2.6vw, var(--fs-4)); margin-top: auto; }
-.principio--cierre { justify-content: flex-end; gap: var(--space-5); }
-.principio--cierre .boton { background: var(--color-negro); border-color: var(--color-negro); color: var(--color-blanco); }
+.principio__titulo { font-size: clamp(var(--fs-2), 2.1vw, var(--fs-3)); letter-spacing: -0.03em; line-height: 1.05; }
+.principio--cierre { background: var(--color-lima); }
+.principio--cierre p { font-family: var(--font-display); font-weight: var(--peso-medio); font-size: clamp(var(--fs-2), 2vw, var(--fs-3)); letter-spacing: -0.025em; line-height: 1.12; }
+.principio--cierre .boton { align-self: flex-start; }
 .principio--cierre .boton:hover { background: var(--color-blanco); border-color: var(--color-blanco); color: var(--color-negro); }
 .principio--cierre :focus-visible { outline-color: var(--color-negro); }
+@media (min-width: 640px) { .principios { grid-template-columns: repeat(2, minmax(0, 1fr)); } .principio { gap: 3.5rem; min-height: 17rem; } }
+@media (min-width: 1000px) { .principios { grid-template-columns: repeat(3, minmax(0, 1fr)); } .principio { min-height: 19rem; } }
 .mov .principios.rev { opacity: 1; transform: none; }
+.mov .principio { opacity: 0; transform: translateY(1.25rem); transition: opacity 0.5s ease calc(var(--i, 0) * 70ms), transform 0.7s var(--curva) calc(var(--i, 0) * 70ms); }
+.mov .principios.is-vista .principio { opacity: 1; transform: none; }
+.principio:nth-child(2) { --i: 1; } .principio:nth-child(3) { --i: 2; } .principio:nth-child(4) { --i: 3; } .principio:nth-child(5) { --i: 4; } .principio:nth-child(6) { --i: 5; }
 
 /* ---------- 5 · Frase ---------- */
 .banda.frase { padding: 0; }

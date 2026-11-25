@@ -31,11 +31,12 @@
     const elegir = (indice, conFoco = false) => {
       const nuevo = (indice + pestanas.length) % pestanas.length;
       if (nuevo !== activa) {
+        lista.parentElement.dataset.sentido = nuevo > activa ? 'baja' : 'sube';
         activa = nuevo;
         pintar();
         if (alCambiar) alCambiar(activa, paneles[activa]);
       }
-      if (conFoco) pestanas[activa].focus();
+      if (conFoco) pestanas[activa].focus({ preventScroll: true });
     };
 
     const teclas = vertical
@@ -56,6 +57,7 @@
       elegir,
       siguiente: () => elegir(activa + 1),
       panelActivo: () => paneles[activa],
+      indice: () => activa,
       pestanas,
       paneles,
     };
@@ -149,6 +151,56 @@
       mover();
     }
     return pestanas;
+  }
+
+  /* ---------- Qué hacemos: el scroll pasa de un área a la otra ---------- */
+  const ALTO_MINIMO = '(min-height: 560px)';
+
+  function iniciarScrollAreas(cap, areas) {
+    const seccion = cap.closest('section');
+    const forma = uno('.banda__forma', seccion);
+    const fijo = uno('.caja', seccion);
+    const alcanza = matchMedia(ALTO_MINIMO);
+    const total = areas.pestanas.length;
+    let pedido = 0;
+
+    const estaFija = () => seccion.classList.contains('es-fija');
+    /* Cuánto se avanzó dentro de la sección y cuánto hay para recorrer, en píxeles. */
+    const medir = () => ({
+      avance: parseFloat(getComputedStyle(fijo).top) - forma.getBoundingClientRect().top,
+      recorrido: forma.offsetHeight - fijo.offsetHeight,
+    });
+    const seguir = () => {
+      pedido = 0;
+      if (!estaFija()) return;
+      const { avance, recorrido } = medir();
+      areas.elegir(Math.min(total - 1, Math.max(0, Math.floor((avance / recorrido) * total))));
+    };
+    const pedir = () => { if (!pedido) pedido = requestAnimationFrame(seguir); };
+
+    /* Lleva la página al medio del tramo de esa área. Si la sección ya está fija, no se ve ningún salto. */
+    const irA = (indice) => {
+      if (!estaFija()) return false;
+      const { avance, recorrido } = medir();
+      const destino = window.scrollY - avance + recorrido * ((indice + 0.5) / total);
+      const sinSalto = avance >= 0 && avance <= recorrido;
+      window.scrollTo({ top: destino, behavior: sinSalto ? 'instant' : 'smooth' });
+      return true;
+    };
+
+    const ajustar = () => { seccion.classList.toggle('es-fija', alcanza.matches); pedir(); };
+    seccion.style.setProperty('--areas', total);
+    alcanza.addEventListener('change', ajustar);
+    window.addEventListener('scroll', pedir, { passive: true });
+    window.addEventListener('resize', pedir);
+    areas.pestanas.forEach((p, i) => {
+      p.addEventListener('click', () => irA(i));
+      p.addEventListener('keydown', (e) => {
+        if (['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(e.key)) irA(areas.indice());
+      });
+    });
+    ajustar();
+    return irA;
   }
 
   /* ---------- Menú ---------- */
@@ -258,14 +310,17 @@
 
   const cap = uno('[data-cap]');
   const areas = cap ? iniciarCapacidades(cap) : null;
+  const irAlArea = areas && seMueve ? iniciarScrollAreas(cap, areas) : () => false;
   iniciarMenu();
 
   /* El menú nombra las cuatro áreas: sus páginas todavía no existen, así que abren el área en "Qué hacemos". */
   if (areas) {
     todos('a[data-area]').forEach((enlace) => {
-      enlace.addEventListener('click', () => {
+      enlace.addEventListener('click', (e) => {
         const indice = areas.pestanas.findIndex((p) => p.dataset.area === enlace.dataset.area);
-        if (indice >= 0) areas.elegir(indice);
+        if (indice < 0) return;
+        if (irAlArea(indice)) { e.preventDefault(); areas.pestanas[indice].focus({ preventScroll: true }); }
+        else areas.elegir(indice);
       });
     });
   }

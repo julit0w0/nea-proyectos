@@ -127,7 +127,10 @@
         <div class="visor caso__visor" data-visor>
           <div class="visor__marco">
             <figure class="visor__panel" role="tabpanel" id="bp-1" aria-labelledby="bt-1">
-              <img src="assets/pantallas/brigida-portada-1600.webp" srcset="assets/pantallas/brigida-portada-800.webp 800w, assets/pantallas/brigida-portada-1600.webp 1600w" sizes="(min-width: 1000px) 46vw, (min-width: 700px) 66vw, 92vw" width="1600" height="1067" loading="lazy" decoding="async" alt="Portada del sitio de Brígida: el salón del restaurante y el titular sobre un panel naranja">
+              <video muted loop playsinline preload="none" poster="assets/video/brigida-escritorio.jpg" width="1200" height="800" data-recorrido aria-label="Recorrido grabado del sitio de Brígida en una computadora">
+                <source src="assets/video/brigida-escritorio-720.mp4" type="video/mp4" media="(max-width: 699px)">
+                <source src="assets/video/brigida-escritorio.mp4" type="video/mp4">
+              </video>
             </figure>
             <figure class="visor__panel" role="tabpanel" id="bp-2" aria-labelledby="bt-2">
               <img src="assets/pantallas/brigida-carta-1600.webp" srcset="assets/pantallas/brigida-carta-800.webp 800w, assets/pantallas/brigida-carta-1600.webp 1600w" sizes="(min-width: 1000px) 46vw, (min-width: 700px) 66vw, 92vw" width="1600" height="1067" loading="lazy" decoding="async" alt="Carta del día del sitio de Brígida, con platos y precios">
@@ -138,10 +141,11 @@
           </div>
           <div class="visor__barra">
             <div class="visor__tabs" role="tablist" aria-label="Pantallas de Brígida">
-              <button class="visor__tab" type="button" role="tab" id="bt-1" aria-controls="bp-1" aria-selected="true">Portada</button>
+              <button class="visor__tab" type="button" role="tab" id="bt-1" aria-controls="bp-1" aria-selected="true">Recorrido</button>
               <button class="visor__tab" type="button" role="tab" id="bt-2" aria-controls="bp-2" aria-selected="false" tabindex="-1">Carta</button>
               <button class="visor__tab" type="button" role="tab" id="bt-3" aria-controls="bp-3" aria-selected="false" tabindex="-1">Reservar</button>
             </div>
+            <button class="visor__pausa" type="button" data-pausa-recorrido aria-label="Pausar el recorrido de Brígida en computadora" hidden>Pausar</button>
           </div>
         </div>
         <figure class="caso__movil">
@@ -150,7 +154,7 @@
               <source src="assets/video/brigida-recorrido.mp4" type="video/mp4">
             </video>
           </div>
-          <figcaption><span>En celular</span><button class="visor__pausa" type="button" data-pausa-recorrido aria-label="Pausar el recorrido de Brígida" hidden>Pausar</button></figcaption>
+          <figcaption><span>En celular</span><button class="visor__pausa" type="button" data-pausa-recorrido aria-label="Pausar el recorrido de Brígida en celular" hidden>Pausar</button></figcaption>
         </figure>
       </article>
     </div>
@@ -171,7 +175,10 @@
         <div class="visor caso__visor" data-visor>
           <div class="visor__marco">
             <figure class="visor__panel" role="tabpanel" id="op-1" aria-labelledby="ot-1">
-              <img src="assets/pantallas/oller-portada-1600.webp" srcset="assets/pantallas/oller-portada-800.webp 800w, assets/pantallas/oller-portada-1600.webp 1600w" sizes="(min-width: 1000px) 46vw, (min-width: 700px) 66vw, 92vw" width="1600" height="1067" loading="lazy" decoding="async" alt="Portada del sitio de Oller: la fachada de un edificio con balcones y plantas">
+              <video muted loop playsinline preload="none" poster="assets/video/oller-escritorio.jpg" width="1200" height="800" data-recorrido aria-label="Recorrido grabado del sitio de Oller en una computadora">
+                <source src="assets/video/oller-escritorio-720.mp4" type="video/mp4" media="(max-width: 699px)">
+                <source src="assets/video/oller-escritorio.mp4" type="video/mp4">
+              </video>
             </figure>
             <figure class="visor__panel" role="tabpanel" id="op-2" aria-labelledby="ot-2">
               <img src="assets/pantallas/oller-unidades-1600.webp" srcset="assets/pantallas/oller-unidades-800.webp 800w, assets/pantallas/oller-unidades-1600.webp 1600w" sizes="(min-width: 1000px) 46vw, (min-width: 700px) 66vw, 92vw" width="1600" height="1067" loading="lazy" decoding="async" alt="Tabla de unidades disponibles de Oller, con el enlace para visitar cada una">
@@ -182,10 +189,11 @@
           </div>
           <div class="visor__barra">
             <div class="visor__tabs" role="tablist" aria-label="Pantallas de Oller">
-              <button class="visor__tab" type="button" role="tab" id="ot-1" aria-controls="op-1" aria-selected="true">Portada</button>
+              <button class="visor__tab" type="button" role="tab" id="ot-1" aria-controls="op-1" aria-selected="true">Recorrido</button>
               <button class="visor__tab" type="button" role="tab" id="ot-2" aria-controls="op-2" aria-selected="false" tabindex="-1">Unidades</button>
               <button class="visor__tab" type="button" role="tab" id="ot-3" aria-controls="op-3" aria-selected="false" tabindex="-1">Avance de obra</button>
             </div>
+            <button class="visor__pausa" type="button" data-pausa-recorrido aria-label="Pausar el recorrido de Oller en computadora" hidden>Pausar</button>
           </div>
         </div>
         <figure class="caso__movil">
@@ -194,7 +202,7 @@
               <source src="assets/video/oller-recorrido.mp4" type="video/mp4">
             </video>
           </div>
-          <figcaption><span>En celular</span><button class="visor__pausa" type="button" data-pausa-recorrido aria-label="Pausar el recorrido de Oller" hidden>Pausar</button></figcaption>
+          <figcaption><span>En celular</span><button class="visor__pausa" type="button" data-pausa-recorrido aria-label="Pausar el recorrido de Oller en celular" hidden>Pausar</button></figcaption>
         </figure>
       </article>
     </div>
@@ -215,7 +223,10 @@
         <div class="visor caso__visor" data-visor>
           <div class="visor__marco">
             <figure class="visor__panel" role="tabpanel" id="tp-1" aria-labelledby="tt-1">
-              <img src="assets/pantallas/tarn-portada-1600.webp" srcset="assets/pantallas/tarn-portada-800.webp 800w, assets/pantallas/tarn-portada-1600.webp 1600w" sizes="(min-width: 1000px) 46vw, (min-width: 700px) 66vw, 92vw" width="1600" height="1067" loading="lazy" decoding="async" alt="Portada de la tienda de Tarn: una montaña al atardecer">
+              <video muted loop playsinline preload="none" poster="assets/video/tarn-escritorio.jpg" width="1200" height="800" data-recorrido aria-label="Recorrido grabado del sitio de Tarn en una computadora">
+                <source src="assets/video/tarn-escritorio-720.mp4" type="video/mp4" media="(max-width: 699px)">
+                <source src="assets/video/tarn-escritorio.mp4" type="video/mp4">
+              </video>
             </figure>
             <figure class="visor__panel" role="tabpanel" id="tp-2" aria-labelledby="tt-2">
               <img src="assets/pantallas/tarn-producto-1600.webp" srcset="assets/pantallas/tarn-producto-800.webp 800w, assets/pantallas/tarn-producto-1600.webp 1600w" sizes="(min-width: 1000px) 46vw, (min-width: 700px) 66vw, 92vw" width="1600" height="1067" loading="lazy" decoding="async" alt="Pantalla de producto de Tarn: fotos de un cortaviento, precio, talles y botón de compra">
@@ -226,10 +237,11 @@
           </div>
           <div class="visor__barra">
             <div class="visor__tabs" role="tablist" aria-label="Pantallas de Tarn">
-              <button class="visor__tab" type="button" role="tab" id="tt-1" aria-controls="tp-1" aria-selected="true">Portada</button>
+              <button class="visor__tab" type="button" role="tab" id="tt-1" aria-controls="tp-1" aria-selected="true">Recorrido</button>
               <button class="visor__tab" type="button" role="tab" id="tt-2" aria-controls="tp-2" aria-selected="false" tabindex="-1">Producto</button>
               <button class="visor__tab" type="button" role="tab" id="tt-3" aria-controls="tp-3" aria-selected="false" tabindex="-1">Productos</button>
             </div>
+            <button class="visor__pausa" type="button" data-pausa-recorrido aria-label="Pausar el recorrido de Tarn en computadora" hidden>Pausar</button>
           </div>
         </div>
         <figure class="caso__movil">
@@ -238,7 +250,7 @@
               <source src="assets/video/tarn-recorrido.mp4" type="video/mp4">
             </video>
           </div>
-          <figcaption><span>En celular</span><button class="visor__pausa" type="button" data-pausa-recorrido aria-label="Pausar el recorrido de Tarn" hidden>Pausar</button></figcaption>
+          <figcaption><span>En celular</span><button class="visor__pausa" type="button" data-pausa-recorrido aria-label="Pausar el recorrido de Tarn en celular" hidden>Pausar</button></figcaption>
         </figure>
       </article>
     </div>
@@ -329,22 +341,21 @@
   <section class="como" id="como-trabajamos" aria-labelledby="t-como">
     <div class="caja">
       <h2 class="sec__titulo rev" id="t-como">Cómo trabajamos</h2>
-    </div>
       <ol class="principios rev">
         <li class="principio">
           <span class="num" aria-hidden="true">01</span>
-          <div class="principio__cuerpo"><h3 class="principio__titulo">El trabajo habla primero.</h3>
-          <p>Antes de la primera factura, el cliente recorre su sitio terminado o usa su sistema con datos reales. Si no sirve, no se cobra.</p></div>
+          <div class="principio__cuerpo"><h3 class="principio__titulo">Verse y funcionar como las mejores.</h3>
+          <p>Diseño y sistema salen del mismo estudio, medidos contra los mejores del mundo.</p></div>
         </li>
         <li class="principio">
           <span class="num" aria-hidden="true">02</span>
-          <div class="principio__cuerpo"><h3 class="principio__titulo">Todo es del cliente.</h3>
-          <p>El dominio, el hosting, el código y las cuentas de anuncios quedan a nombre de la empresa.</p></div>
+          <div class="principio__cuerpo"><h3 class="principio__titulo">Un trabajo que se recorre.</h3>
+          <p>El sitio llega terminado al teléfono del dueño, con sus textos, sus fotos y cada botón andando. El sistema, con sus datos adentro.</p></div>
         </li>
         <li class="principio">
           <span class="num" aria-hidden="true">03</span>
-          <div class="principio__cuerpo"><h3 class="principio__titulo">Decimos que no.</h3>
-          <p>Si un ajuste chico alcanza, o si algo no va a mover el número, lo decimos antes de cotizar.</p></div>
+          <div class="principio__cuerpo"><h3 class="principio__titulo">Un estudio con criterio propio.</h3>
+          <p>Miramos cómo vende y cómo trabaja la empresa antes de opinar. La respuesta puede ser un sistema entero o un solo botón.</p></div>
         </li>
         <li class="principio">
           <span class="num" aria-hidden="true">04</span>
@@ -353,14 +364,15 @@
         </li>
         <li class="principio">
           <span class="num" aria-hidden="true">05</span>
-          <div class="principio__cuerpo"><h3 class="principio__titulo">Una sola vara.</h3>
-          <p>Las cuatro áreas se piensan juntas, en el mismo estudio.</p></div>
+          <div class="principio__cuerpo"><h3 class="principio__titulo">Cada pieza es tuya.</h3>
+          <p>El dominio, el hosting, el código y las cuentas de anuncios quedan a nombre de tu empresa.</p></div>
         </li>
         <li class="principio principio--cierre">
           <p>Plazos, etapas y precios van por escrito en cada propuesta.</p>
           <a class="boton" href="#contacto">Cuéntanos tu proyecto</a>
         </li>
       </ol>
+    </div>
   </section>
 
   <section class="banda banda--frase frase" aria-label="Para los que hacen la diferencia" data-banda>
