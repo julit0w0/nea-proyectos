@@ -11,6 +11,7 @@
 <link rel="icon" href="assets/logo/simbolo-negro.svg" type="image/svg+xml">
 <link rel="preload" href="assets/fuentes/Switzer-Medium.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fuentes/Chivo-wght.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" as="image" href="assets/video/portada.jpg" fetchpriority="high">
 <link rel="stylesheet" href="css/tokens.css">
 <link rel="stylesheet" href="css/estilos.css">
 <link rel="stylesheet" href="css/secciones.css">
@@ -60,52 +61,23 @@
 
   <section class="portada" id="portada" aria-labelledby="titular">
     <div class="portada__texto">
-      <div class="portada__centro">
-        <h1 class="portada__titular entra" id="titular">Otra clase de estudio.</h1>
-        <p class="portada__bajada entra">Hacemos marcas, sitios, sistemas y anuncios para empresas que quieren estar entre las mejores de su rubro.</p>
-        <div class="portada__botones entra">
-          <a class="boton" href="#contacto">Cuéntanos tu proyecto</a>
-          <a class="boton boton--linea" href="#trabajos">Ver trabajos</a>
-        </div>
+      <h1 class="portada__titular entra" id="titular">Otra clase de estudio.</h1>
+      <p class="portada__bajada entra">Hacemos marcas, sitios, sistemas y anuncios para empresas que quieren estar entre las mejores de su rubro.</p>
+      <div class="portada__botones entra">
+        <a class="boton" href="#contacto">Cuéntanos tu proyecto</a>
+        <a class="boton boton--linea" href="#trabajos">Ver trabajos</a>
       </div>
-      <p class="portada__lugar entra">Oberá, Misiones. Para toda Argentina.</p>
     </div>
 
-    <div class="portada__panel entra">
-      <div class="visor visor--oscuro" id="visor-portada" data-visor data-auto="6000">
-        <div class="visor__marco">
-          <figure class="visor__panel" role="tabpanel" id="vp-1" aria-labelledby="vt-1">
-            <img src="assets/pantallas/brigida-reservar-1600.webp"
-                 srcset="assets/pantallas/brigida-reservar-800.webp 800w, assets/pantallas/brigida-reservar-1600.webp 1600w"
-                 sizes="(min-width: 900px) 52vw, 92vw" width="1600" height="1067" fetchpriority="high" decoding="async"
-                 alt="Pantalla de reservas del sitio de Brígida: una grilla de días y horarios con las mesas libres">
-            <figcaption class="visor__pie"><span>Brígida · Restaurante</span><span class="rotulo">Marca de concepto</span></figcaption>
-          </figure>
-          <figure class="visor__panel" role="tabpanel" id="vp-2" aria-labelledby="vt-2">
-            <img src="assets/pantallas/oller-unidades-1600.webp"
-                 srcset="assets/pantallas/oller-unidades-800.webp 800w, assets/pantallas/oller-unidades-1600.webp 1600w"
-                 sizes="(min-width: 900px) 52vw, 92vw" width="1600" height="1067" loading="lazy" decoding="async"
-                 alt="Pantalla de unidades del sitio de Oller: tabla de departamentos con ambientes, superficie, orientación y el enlace para agendar una visita">
-            <figcaption class="visor__pie"><span>Oller · Inmobiliaria</span><span class="rotulo">Marca de concepto</span></figcaption>
-          </figure>
-          <figure class="visor__panel" role="tabpanel" id="vp-3" aria-labelledby="vt-3">
-            <img src="assets/pantallas/tarn-producto-1600.webp"
-                 srcset="assets/pantallas/tarn-producto-800.webp 800w, assets/pantallas/tarn-producto-1600.webp 1600w"
-                 sizes="(min-width: 900px) 52vw, 92vw" width="1600" height="1067" loading="lazy" decoding="async"
-                 alt="Pantalla de producto de la tienda de Tarn: fotos de un cortaviento, precio, talles y botón de compra">
-            <figcaption class="visor__pie"><span>Tarn · Indumentaria</span><span class="rotulo">Marca de concepto</span></figcaption>
-          </figure>
-        </div>
-        <div class="visor__barra">
-          <div class="visor__tabs" role="tablist" aria-label="Sistemas de muestra">
-            <button class="visor__tab" type="button" role="tab" id="vt-1" aria-controls="vp-1" aria-selected="true">Reservas</button>
-            <button class="visor__tab" type="button" role="tab" id="vt-2" aria-controls="vp-2" aria-selected="false" tabindex="-1">Agenda de visitas</button>
-            <button class="visor__tab" type="button" role="tab" id="vt-3" aria-controls="vp-3" aria-selected="false" tabindex="-1">Tienda</button>
-          </div>
-          <button class="visor__pausa" type="button" data-pausa aria-pressed="false" hidden>Pausar</button>
-        </div>
+    <figure class="portada__video entra">
+      <div class="portada__marco">
+        <video muted loop playsinline preload="none" poster="assets/video/portada.jpg" width="1600" height="900" data-recorrido aria-label="Video de trabajos del estudio: marcas, sitios y piezas de Brígida, Oller, Tarn y NEA Sistemas">
+          <source src="assets/video/portada-720.mp4" type="video/mp4" media="(max-width: 699px)">
+          <source src="assets/video/portada.mp4" type="video/mp4">
+        </video>
       </div>
-    </div>
+      <figcaption class="portada__pie"><span>Oberá, Misiones. Para toda Argentina.</span><span class="portada__credito">Brígida, Oller y Tarn <span class="rotulo">Marcas de concepto</span></span><button class="visor__pausa" type="button" data-pausa-recorrido aria-label="Pausar el video de la portada" hidden>Pausar</button></figcaption>
+    </figure>
   </section>
 
   <section class="trabajos" id="trabajos" aria-labelledby="t-trabajos">

@@ -4,35 +4,28 @@
 .sec--negra { background: var(--color-negro); color: var(--color-blanco); }
 .sec__titulo { font-size: clamp(var(--fs-3), 3.2vw, var(--fs-4)); margin-bottom: clamp(2rem, 4vw, var(--space-8)); }
 
-/* ---------- 1 · Portada partida ---------- */
-.portada { display: grid; }
+/* ---------- 1 · Portada: titular y video a todo el ancho ---------- */
 .portada__texto {
-  display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-7);
-  padding: clamp(2.5rem, 7vw, 4.5rem) var(--margen) var(--space-6);
+  display: grid; gap: clamp(1rem, 1.6vw, 1.5rem) var(--space-6);
+  width: min(100% - 2 * var(--margen), var(--ancho-max)); margin-inline: auto;
+  padding-block: clamp(1.75rem, 2.4vw, 2.5rem) clamp(1.5rem, 2.2vw, 2.25rem);
 }
-.portada__titular { font-size: clamp(2.5rem, 5vw, 3.8rem); letter-spacing: -0.035em; line-height: 1; }
-.portada__bajada { margin-top: var(--space-5); max-width: 30ch; font-size: var(--fs-1); line-height: 1.4; }
-.portada__botones { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-6); }
-.portada__lugar {
-  padding-top: var(--space-4); border-top: 1px solid var(--filete-tinta);
+.portada__titular { font-size: clamp(3rem, min(10.2vw, 19svh), 12rem); letter-spacing: -0.05em; line-height: 0.92; margin-left: -0.045em; }
+.portada__bajada { max-width: 46ch; font-size: var(--fs-1); line-height: 1.4; text-wrap: balance; }
+.portada__botones { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+.portada__marco { overflow: clip; background: var(--color-negro); border-radius: 0 clamp(2rem, 6vw, 5.5rem) 0 clamp(2rem, 6vw, 5.5rem); }
+.portada__marco video { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; }
+.portada__pie {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem 1.5rem;
+  width: min(100% - 2 * var(--margen), var(--ancho-max)); margin-inline: auto; padding-top: var(--space-3);
   font-size: var(--fs-m1); color: var(--gris-tinta);
 }
-.portada__panel {
-  display: flex; align-items: center; justify-content: center;
-  padding: clamp(1.25rem, 3vw, 4rem) var(--margen);
-  background: var(--color-negro); color: var(--color-blanco);
-}
-.portada__panel .visor { width: 100%; max-width: 62rem; }
-.portada__panel .visor__barra { order: -1; }
-
-@media (min-width: 900px) {
-  .portada {
-    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-    min-height: clamp(32rem, calc(100svh - var(--alto-cab)), 50rem);
-  }
-  .portada__texto { padding: var(--space-7) clamp(1.5rem, 3vw, 4rem) var(--space-6) var(--borde); }
-  .portada__centro { margin-block: auto; }
-  .portada__panel { padding: clamp(1.5rem, 3vw, 4rem); padding-right: max(clamp(1.5rem, 3vw, 4rem), calc(var(--borde) - var(--margen) + 1.5rem)); }
+.portada__credito { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; }
+.portada__pie .visor__pausa { margin-left: auto; color: var(--color-negro); }
+@media (min-width: 700px) { .portada__marco video { aspect-ratio: 16 / 9; } .portada__credito { margin-left: auto; } .portada__pie .visor__pausa { margin-left: 0; } }
+@media (min-width: 1000px) {
+  .portada__texto { grid-template-columns: minmax(0, 1fr) auto; align-items: end; }
+  .portada__titular { grid-column: 1 / -1; white-space: nowrap; }
 }
 
 /* ---------- 2 · Trabajos: en trabajos.css ---------- */

@@ -76,7 +76,7 @@ h1, h2, h3 {
 }
 
 :focus-visible { outline: 2px solid var(--color-electrico); outline-offset: 3px; }
-.sec--negra :focus-visible, .portada__panel :focus-visible, .frase :focus-visible, .pie :focus-visible { outline-color: var(--color-lima); }
+.sec--negra :focus-visible, .frase :focus-visible, .pie :focus-visible { outline-color: var(--color-lima); }
 
 .caja { width: min(100% - 2 * var(--margen), var(--ancho-max)); margin-inline: auto; }
 
@@ -223,7 +223,7 @@ h1, h2, h3 {
 .mov .portada__bajada.entra { animation-delay: 0.07s; }
 .mov .portada__botones.entra { animation-delay: 0.14s; }
 .mov .portada__lugar.entra { animation-delay: 0.21s; }
-.mov .portada__panel.entra { animation-name: aparece; animation-delay: 0.1s; }
+.mov .portada__video.entra { animation-name: aparece; animation-delay: 0.1s; }
 @keyframes entra { from { opacity: 0; transform: translateY(0.9rem); } to { opacity: 1; transform: none; } }
 @keyframes aparece { from { opacity: 0; } to { opacity: 1; } }
 

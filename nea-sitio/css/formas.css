@@ -9,22 +9,6 @@
 .boton--linea:hover { background: var(--color-negro); border-color: var(--color-negro); color: var(--color-blanco); }
 .rotulo { padding: 0.4em 0.85em; }
 
-/* ---------- 1 · Portada: el panel es una pieza del logo ---------- */
-.portada__panel {
-  --r: clamp(2rem, 6vw, 5.5rem);
-  position: relative; isolation: isolate; background: var(--color-blanco);
-}
-.portada__panel::before {
-  content: ""; position: absolute; inset: 0; z-index: -1; background: var(--color-negro);
-  border-radius: 0 0 0 var(--r);
-}
-.portada__panel .visor__panel img { border: 0; border-radius: clamp(0.6rem, 1.1vw, 1.25rem); }
-.mov .portada__panel .visor__marco { animation: abre 1.2s 0.25s cubic-bezier(0.65, 0, 0.2, 1) both; }
-@keyframes abre { from { clip-path: circle(0% at 0% 100%); } to { clip-path: circle(150% at 0% 100%); } }
-@media (max-width: 899px) {
-  .portada__panel { padding-bottom: calc(clamp(1.25rem, 3vw, 4rem) + var(--r) * 0.4); }
-}
-
 /* ---------- Bandas de esta parte ---------- */
 .banda--que, .banda--frase, .banda--pie { padding: 0; }
 .banda--que { --antes: var(--color-electrico); --despues: var(--color-blanco); --fondo: var(--color-negro); --t: var(--color-blanco); }
@@ -137,7 +121,3 @@
 .banda.pie { padding: 0; }
 .pie .banda__forma { border-bottom-left-radius: 0; padding-block: clamp(4rem, 8vw, 7rem) var(--space-6); }
 .pie__firma img { height: 1.35rem; }
-
-@media (prefers-reduced-motion: reduce) {
-  .portada__panel .visor__marco { clip-path: none; }
-}

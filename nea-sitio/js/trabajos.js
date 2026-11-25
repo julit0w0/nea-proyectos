@@ -23,7 +23,7 @@
     else v.pause();
   };
   document.querySelectorAll('[data-pausa-recorrido]').forEach((boton) => {
-    const video = boton.closest('.caso__visor, .caso__movil').querySelector('video');
+    const video = boton.closest('.caso__visor, .caso__movil, .portada__video').querySelector('video');
     const panel = video.closest('.visor__panel');
     const nombre = boton.getAttribute('aria-label').replace('Pausar ', '');
     boton.hidden = false;
