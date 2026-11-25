@@ -1,0 +1,236 @@
+/* Prototipo P2 · Ingeniería de producto — base, encabezado, botones, visor de pantallas y piezas comunes.
+   Colores, familias y pesos: solo tokens (tokens.css). Los grises son el negro y el blanco de marca mezclados. */
+
+@font-face {
+  font-family: "Switzer";
+  src: url("../assets/fuentes/Switzer-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Chivo";
+  src: url("../assets/fuentes/Chivo-wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --margen: clamp(1.25rem, 4vw, 6rem);
+  --ancho-max: 2400px;
+  --borde: max(var(--margen), calc((100vw - var(--ancho-max)) / 2));
+  --alto-cab: 4rem;
+  /* Sobre blanco */
+  --gris-tinta: color-mix(in srgb, var(--color-negro) 64%, var(--color-blanco));
+  --filete-tinta: color-mix(in srgb, var(--color-negro) 14%, var(--color-blanco));
+  --velo-tinta: color-mix(in srgb, var(--color-negro) 4%, var(--color-blanco));
+  /* Sobre negro */
+  --gris: color-mix(in srgb, var(--color-blanco) 70%, var(--color-negro));
+  --filete: color-mix(in srgb, var(--color-blanco) 20%, var(--color-negro));
+  --velo: color-mix(in srgb, var(--color-blanco) 7%, var(--color-negro));
+  --curva: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  /* 16 px a 360 de ancho y 19 px a 1440 (regla de marca del 20/11); hasta 22 px a 2560. */
+  font-size: clamp(16px, 15px + 0.2778vw, 19px);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--alto-cab) + 1rem);
+  background: var(--color-blanco);
+}
+@media (min-width: 1440px) {
+  html { font-size: clamp(19px, 15.14px + 0.268vw, 22px); }
+}
+html.mov { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--color-blanco);
+  color: var(--color-negro);
+  font-family: var(--font-body);
+  font-weight: var(--peso-regular);
+  font-size: var(--fs-0);
+  line-height: var(--lh-texto);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+h1, h2, h3, p, ul, ol, dl, dd, figure, fieldset { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+fieldset { padding: 0; border: 0; min-width: 0; }
+img, video, svg { display: block; max-width: 100%; }
+img, video { height: auto; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; border-radius: 0; }
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: var(--peso-medio);
+  line-height: var(--lh-titulos);
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+:focus-visible { outline: 2px solid var(--color-electrico); outline-offset: 3px; }
+.sec--negra :focus-visible, .portada__panel :focus-visible, .frase :focus-visible, .pie :focus-visible { outline-color: var(--color-lima); }
+
+.caja { width: min(100% - 2 * var(--margen), var(--ancho-max)); margin-inline: auto; }
+
+.salto {
+  position: absolute; left: var(--margen); top: -4rem; z-index: 30;
+  padding: 0.7rem 1rem; background: var(--color-negro); color: var(--color-blanco);
+}
+.salto:focus { top: 0.5rem; }
+
+/* ---------- Piezas chicas ---------- */
+.num { font-size: var(--fs-m1); font-variant-numeric: tabular-nums; color: var(--gris-tinta); }
+.sec--negra .num { color: var(--gris); }
+
+.rotulo {
+  display: inline-flex; align-items: center; width: fit-content;
+  padding: 0.3em 0.6em; border: 1px solid currentColor;
+  font-size: var(--fs-m1); line-height: 1.2; white-space: nowrap;
+}
+.rotulo--claro, .visor--oscuro .rotulo { color: var(--color-blanco); }
+
+.enlace {
+  display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: 0.2em 0.7em;
+  color: var(--color-electrico); font-weight: var(--peso-medio);
+  text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.25em;
+  transition: text-decoration-color 0.2s;
+}
+.enlace:hover { text-decoration-color: transparent; }
+.enlace__dir { font-weight: var(--peso-regular); color: var(--gris-tinta); font-size: var(--fs-m1); overflow-wrap: anywhere; }
+.enlace--grande { padding-block: 0.45rem; font-family: var(--font-display); font-size: var(--fs-2); letter-spacing: -0.02em; color: var(--color-negro); overflow-wrap: anywhere; }
+.enlace--grande:hover { color: var(--color-electrico); }
+
+/* ---------- Botones: rectos, de 48 px de alto ---------- */
+.boton {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 3rem; padding: 0 1.4rem;
+  background: var(--color-negro); color: var(--color-blanco); border: 1px solid var(--color-negro);
+  font-weight: var(--peso-medio); line-height: 1.1; text-align: center;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+.boton:hover { background: var(--color-electrico); border-color: var(--color-electrico); }
+.boton--linea { background: transparent; color: var(--color-negro); }
+.boton--linea:hover { background: var(--color-negro); border-color: var(--color-negro); color: var(--color-blanco); }
+.boton--blanco { background: var(--color-blanco); color: var(--color-negro); border-color: var(--color-blanco); }
+.boton--blanco:hover { background: var(--color-negro); border-color: var(--color-negro); color: var(--color-blanco); }
+.boton--chico { min-height: 2.5rem; padding: 0 1rem; font-size: var(--fs-m1); }
+
+/* ---------- Encabezado ---------- */
+.cab {
+  position: sticky; top: 0; z-index: 20;
+  background: var(--color-blanco); border-bottom: 1px solid var(--filete-tinta);
+}
+.cab__fila { display: flex; align-items: center; gap: var(--space-5); height: var(--alto-cab); }
+.cab__marca { display: inline-flex; align-items: center; min-height: 2.75rem; margin-right: auto; flex: none; }
+.cab__marca img { width: auto; height: 1.35rem; }
+.cab__nav { display: none; gap: clamp(1rem, 1.9vw, 2.2rem); font-size: var(--fs-m1); }
+.cab__nav a { padding: 0.5rem 0; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+.cab__nav a:hover { border-bottom-color: var(--color-negro); }
+.cab__cta { display: none; }
+.cab__menu {
+  min-height: 2.75rem; padding: 0 0.9rem; border: 1px solid var(--color-negro);
+  font-weight: var(--peso-medio); font-size: var(--fs-m1);
+}
+.cab__menu[aria-expanded="true"] { background: var(--color-negro); color: var(--color-blanco); }
+@media (min-width: 1100px) {
+  .cab__nav { display: flex; }
+  .cab__cta { display: inline-flex; }
+  .cab__menu, .menu { display: none !important; }
+}
+
+.menu {
+  position: absolute; left: 0; right: 0; top: 100%;
+  height: calc(100dvh - var(--alto-cab)); overflow-y: auto;
+  background: var(--color-blanco); border-top: 1px solid var(--filete-tinta);
+}
+.menu[hidden] { display: none; }
+.menu__nav { display: flex; flex-direction: column; padding-block: var(--space-5) var(--space-7); }
+.menu__nav a:not(.boton) {
+  padding: 0.9rem 0; border-bottom: 1px solid var(--filete-tinta);
+  font-family: var(--font-display); font-weight: var(--peso-medio); font-size: var(--fs-3); letter-spacing: -0.02em; line-height: 1.1;
+}
+.menu__nav .boton { margin-top: var(--space-6); align-self: flex-start; }
+
+/* ---------- Visor de pantallas ----------
+   Los paneles comparten la misma celda de la grilla: el visor mide lo que la pantalla más alta y no salta al cambiar. */
+.visor { display: flex; flex-direction: column; gap: var(--space-3); min-width: 0; }
+.visor__marco { display: grid; gap: var(--space-5); }
+.visor__panel { min-width: 0; }
+.visor__panel img {
+  width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: top;
+  background: var(--velo-tinta); border: 1px solid var(--filete-tinta);
+}
+.visor--oscuro .visor__panel img { border-color: var(--filete); background: var(--velo); }
+.visor__pie {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem 1rem;
+  margin-top: var(--space-3); font-size: var(--fs-m1); color: var(--gris);
+}
+
+.js .visor__panel { grid-area: 1 / 1; opacity: 0; visibility: hidden; }
+.js .visor__panel.is-activo { opacity: 1; visibility: visible; }
+.mov .visor__panel { transition: opacity 0.35s ease, visibility 0s 0.35s; }
+.mov .visor__panel.is-activo { transition: opacity 0.35s ease; }
+
+.visor__barra { display: none; align-items: center; justify-content: space-between; gap: 0.25rem 1rem; }
+.js .visor__barra { display: flex; }
+.visor__tabs { display: flex; flex-wrap: wrap; gap: 0 clamp(1rem, 1.6vw, 1.75rem); }
+.visor__tab {
+  position: relative; min-height: 2.75rem; padding: 0;
+  font-size: var(--fs-m1); font-weight: var(--peso-medio); color: var(--gris-tinta);
+  transition: color 0.2s;
+}
+.visor__tab::before, .visor__tab::after {
+  content: ""; position: absolute; left: 0; right: 0; top: 0.35rem; height: 2px;
+  transform: scaleX(0); transform-origin: left;
+}
+.visor__tab::before { background: var(--filete-tinta); transform: none; }
+.visor__tab::after { background: var(--color-electrico); }
+.visor__tab:hover { color: var(--color-negro); }
+.visor__tab[aria-selected="true"] { color: var(--color-negro); }
+.visor__tab[aria-selected="true"]::after { transform: none; }
+
+.visor--oscuro .visor__tab { color: var(--gris); }
+.visor--oscuro .visor__tab::before { background: var(--filete); }
+.visor--oscuro .visor__tab::after { background: var(--color-lima); }
+.visor--oscuro .visor__tab:hover, .visor--oscuro .visor__tab[aria-selected="true"] { color: var(--color-blanco); }
+
+/* Avance automático: la línea de la pestaña activa se llena en lo que dura cada pantalla. */
+.visor.is-auto .visor__tab[aria-selected="true"]::after { animation: avance var(--auto, 6s) linear both; }
+.visor.is-auto.is-pausado .visor__tab[aria-selected="true"]::after { animation-play-state: paused; }
+@keyframes avance { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+.visor__pausa {
+  flex: none; min-height: 2.75rem; padding: 0 0.2rem;
+  font-size: var(--fs-m1); color: var(--gris-tinta);
+  text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.25em;
+}
+.visor__pausa[hidden] { display: none; }
+.visor--oscuro .visor__pausa, .sec--negra .visor__pausa { color: var(--gris); }
+.visor__pausa:hover { color: var(--color-negro); }
+.visor--oscuro .visor__pausa:hover, .sec--negra .visor__pausa:hover { color: var(--color-blanco); }
+
+/* ---------- Movimiento ---------- */
+/* Entrada de la portada: una vez, al cargar. Termina siempre a la vista. */
+.mov .entra { animation: entra 0.7s var(--curva) both; }
+.mov .portada__bajada.entra { animation-delay: 0.07s; }
+.mov .portada__botones.entra { animation-delay: 0.14s; }
+.mov .portada__lugar.entra { animation-delay: 0.21s; }
+.mov .portada__panel.entra { animation-name: aparece; animation-delay: 0.1s; }
+@keyframes entra { from { opacity: 0; transform: translateY(0.9rem); } to { opacity: 1; transform: none; } }
+@keyframes aparece { from { opacity: 0; } to { opacity: 1; } }
+
+/* Lo demás aparece una vez, al llegar. */
+.mov .rev { opacity: 0; transform: translateY(1rem); transition: opacity 0.6s ease, transform 0.7s var(--curva); }
+.mov .rev.is-vista { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

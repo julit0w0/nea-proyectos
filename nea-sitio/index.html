@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NEA Sistemas · Estudio de diseño web y marketing digital</title>
+<meta name="description" content="Marca, diseño web, software a medida y anuncios en un mismo estudio de Oberá, Misiones. Para empresas de Argentina que buscan más que una agencia.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="NEA Sistemas · Otra clase de estudio">
+<meta property="og:description" content="Marcas, sitios, sistemas y anuncios para empresas que quieren estar entre las mejores de su rubro.">
+<link rel="icon" href="assets/logo/simbolo-negro.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fuentes/Switzer-Medium.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fuentes/Chivo-wght.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/estilos.css">
+<link rel="stylesheet" href="css/secciones.css">
+<link rel="stylesheet" href="css/trabajos.css">
+<link rel="stylesheet" href="css/formas.css">
+<script>
+  /* Antes de pintar: hay JS, y si se puede mover. */
+  (function (d) {
+    d.classList.add('js');
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('mov');
+  })(document.documentElement);
+</script>
+</head>
+<body>
+<a class="salto" href="#contenido">Ir al contenido</a>
+
+<header class="cab" id="cab">
+  <div class="cab__fila caja">
+    <a class="cab__marca" href="#portada" aria-label="NEA Sistemas, inicio">
+      <img src="assets/logo/lockup-horizontal-claro.svg" alt="NEA Sistemas" width="153" height="26">
+    </a>
+    <nav class="cab__nav" aria-label="Principal">
+      <a href="#trabajos">Trabajos</a>
+      <a href="#que-hacemos" data-area="marca">Marca</a>
+      <a href="#que-hacemos" data-area="sitios">Sitios web</a>
+      <a href="#que-hacemos" data-area="sistemas">Sistemas</a>
+      <a href="#que-hacemos" data-area="anuncios">Anuncios</a>
+      <a href="#como-trabajamos">Cómo trabajamos</a>
+    </nav>
+    <a class="boton boton--chico cab__cta" href="#contacto">Cuéntanos tu proyecto</a>
+    <button class="cab__menu" type="button" id="abrir-menu" aria-expanded="false" aria-controls="menu">Menú</button>
+  </div>
+  <div class="menu" id="menu" hidden>
+    <nav class="menu__nav caja" aria-label="Menú">
+      <a href="#trabajos">Trabajos</a>
+      <a href="#que-hacemos" data-area="marca">Marca</a>
+      <a href="#que-hacemos" data-area="sitios">Sitios web</a>
+      <a href="#que-hacemos" data-area="sistemas">Sistemas</a>
+      <a href="#que-hacemos" data-area="anuncios">Anuncios</a>
+      <a href="#como-trabajamos">Cómo trabajamos</a>
+      <a class="boton" href="#contacto">Cuéntanos tu proyecto</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <section class="portada" id="portada" aria-labelledby="titular">
+    <div class="portada__texto">
+      <div class="portada__centro">
+        <h1 class="portada__titular entra" id="titular">Otra clase de estudio.</h1>
+        <p class="portada__bajada entra">Hacemos marcas, sitios, sistemas y anuncios para empresas que quieren estar entre las mejores de su rubro.</p>
+        <div class="portada__botones entra">
+          <a class="boton" href="#contacto">Cuéntanos tu proyecto</a>
+          <a class="boton boton--linea" href="#trabajos">Ver trabajos</a>
+        </div>
+      </div>
+      <p class="portada__lugar entra">Oberá, Misiones. Para toda Argentina.</p>
+    </div>
+
+    <div class="portada__panel entra">
+      <div class="visor visor--oscuro" id="visor-portada" data-visor data-auto="6000">
+        <div class="visor__marco">
+          <figure class="visor__panel" role="tabpanel" id="vp-1" aria-labelledby="vt-1">
+            <img src="assets/pantallas/brigida-reservar-1600.webp"
+                 srcset="assets/pantallas/brigida-reservar-800.webp 800w, assets/pantallas/brigida-reservar-1600.webp 1600w"
+                 sizes="(min-width: 900px) 52vw, 92vw" width="1600" height="1067" fetchpriority="high" decoding="async"
+                 alt="Pantalla de reservas del sitio de Brígida: una grilla de días y horarios con las mesas libres">
+            <figcaption class="visor__pie"><span>Brígida · Restaurante</span><span class="rotulo">Marca de concepto</span></figcaption>
+          </figure>
+          <figure class="visor__panel" role="tabpanel" id="vp-2" aria-labelledby="vt-2">
+            <img src="assets/pantallas/oller-unidades-1600.webp"
+                 srcset="assets/pantallas/oller-unidades-800.webp 800w, assets/pantallas/oller-unidades-1600.webp 1600w"
+                 sizes="(min-width: 900px) 52vw, 92vw" width="1600" height="1067" loading="lazy" decoding="async"
+                 alt="Pantalla de unidades del sitio de Oller: tabla de departamentos con ambientes, superficie, orientación y el enlace para agendar una visita">
+            <figcaption class="visor__pie"><span>Oller · Inmobiliaria</span><span class="rotulo">Marca de concepto</span></figcaption>
+          </figure>
+          <figure class="visor__panel" role="tabpanel" id="vp-3" aria-labelledby="vt-3">
+            <img src="assets/pantallas/tarn-producto-1600.webp"
+                 srcset="assets/pantallas/tarn-producto-800.webp 800w, assets/pantallas/tarn-producto-1600.webp 1600w"
+                 sizes="(min-width: 900px) 52vw, 92vw" width="1600" height="1067" loading="lazy" decoding="async"
+                 alt="Pantalla de producto de la tienda de Tarn: fotos de un cortaviento, precio, talles y botón de compra">
+            <figcaption class="visor__pie"><span>Tarn · Indumentaria</span><span class="rotulo">Marca de concepto</span></figcaption>
+          </figure>
+        </div>
+        <div class="visor__barra">
+          <div class="visor__tabs" role="tablist" aria-label="Sistemas de muestra">
+            <button class="visor__tab" type="button" role="tab" id="vt-1" aria-controls="vp-1" aria-selected="true">Reservas</button>
+            <button class="visor__tab" type="button" role="tab" id="vt-2" aria-controls="vp-2" aria-selected="false" tabindex="-1">Agenda de visitas</button>
+            <button class="visor__tab" type="button" role="tab" id="vt-3" aria-controls="vp-3" aria-selected="false" tabindex="-1">Tienda</button>
+          </div>
+          <button class="visor__pausa" type="button" data-pausa aria-pressed="false" hidden>Pausar</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="trabajos" id="trabajos" aria-labelledby="t-trabajos">
+    <div class="caja">
+      <h2 class="sec__titulo rev" id="t-trabajos">Trabajos</h2>
+    </div>
+
+    <div class="banda banda--negro" data-banda>
+    <div class="banda__forma">
+    <div class="caja">
+      <article class="caso" aria-labelledby="c-brigida">
+        <div class="caso__meta">
+          <span class="num" aria-hidden="true">01</span>
+          <h3 class="caso__nombre" id="c-brigida"><span>Brígida</span></h3>
+          <p class="caso__linea">Restaurante · Marca, sitio y reservas</p>
+          <p class="rotulo">Marca de concepto</p>
+          <a class="enlace" href="https://nea-brigida.onrender.com" target="_blank" rel="noopener">Ver sitio<span class="enlace__dir">nea-brigida.onrender.com</span></a>
+        </div>
+        <div class="visor caso__visor" data-visor>
+          <div class="visor__marco">
+            <figure class="visor__panel" role="tabpanel" id="bp-1" aria-labelledby="bt-1">
+              <img src="assets/pantallas/brigida-portada-1600.webp" srcset="assets/pantallas/brigida-portada-800.webp 800w, assets/pantallas/brigida-portada-1600.webp 1600w" sizes="(min-width: 1000px) 46vw, (min-width: 700px) 66vw, 92vw" width="1600" height="1067" loading="lazy" decoding="async" alt="Portada del sitio de Brígida: el salón del restaurante y el titular sobre un panel naranja">
+            </figure>
+            <figure class="visor__panel" role="tabpanel" id="bp-2" aria-labelledby="bt-2">
+              <img src="assets/pantallas/brigida-carta-1600.webp" srcset="assets/pantallas/brigida-carta-800.webp 800w, assets/pantallas/brigida-carta-1600.webp 1600w" sizes="(min-width: 1000px) 46vw, (min-width: 700px) 66vw, 92vw" width="1600" height="1067" loading="lazy" decoding="async" alt="Carta del día del sitio de Brígida, con platos y precios">
+            </figure>
+            <figure class="visor__panel" role="tabpanel" id="bp-3" aria-labelledby="bt-3">
+              <img src="assets/pantallas/brigida-reservar-1600.webp" srcset="assets/pantallas/brigida-reservar-800.webp 800w, assets/pantallas/brigida-reservar-1600.webp 1600w" sizes="(min-width: 1000px) 46vw, (min-width: 700px) 66vw, 92vw" width="1600" height="1067" loading="lazy" decoding="async" alt="Pantalla de reservas de Brígida: grilla de días y horarios">
+            </figure>
+          </div>
+          <div class="visor__barra">
+            <div class="visor__tabs" role="tablist" aria-label="Pantallas de Brígida">
+              <button class="visor__tab" type="button" role="tab" id="bt-1" aria-controls="bp-1" aria-selected="true">Portada</button>
+              <button class="visor__tab" type="button" role="tab" id="bt-2" aria-controls="bp-2" aria-selected="false" tabindex="-1">Carta</button>
+              <button class="visor__tab" type="button" role="tab" id="bt-3" aria-controls="bp-3" aria-selected="false" tabindex="-1">Reservar</button>
+            </div>
+          </div>
+        </div>
+        <figure class="caso__movil">
+          <div class="caso__telefono">
+            <video muted loop playsinline preload="none" poster="assets/video/brigida-recorrido.jpg" width="540" height="960" data-recorrido aria-label="Recorrido grabado del sitio de Brígida en un celular">
+              <source src="assets/video/brigida-recorrido.mp4" type="video/mp4">
+            </video>
+          </div>
+          <figcaption><span>En celular</span><button class="visor__pausa" type="button" data-pausa-recorrido aria-label="Pausar el recorrido de Brígida" hidden>Pausar</button></figcaption>
+        </figure>
+      </article>
+    </div>
+    </div>
+    </div>
+
+    <div class="banda banda--lima" data-banda>
+    <div class="banda__forma">
+    <div class="caja">
+      <article class="caso caso--inverso" aria-labelledby="c-oller">
+        <div class="caso__meta">
+          <span class="num" aria-hidden="true">02</span>
+          <h3 class="caso__nombre" id="c-oller"><span>Oller</span></h3>
+          <p class="caso__linea">Inmobiliaria · Marca, sitio y agenda de visitas</p>
+          <p class="rotulo">Marca de concepto</p>
+          <a class="enlace" href="https://nea-oller.onrender.com" target="_blank" rel="noopener">Ver sitio<span class="enlace__dir">nea-oller.onrender.com</span></a>
+        </div>
+        <div class="visor caso__visor" data-visor>
+          <div class="visor__marco">
+            <figure class="visor__panel" role="tabpanel" id="op-1" aria-labelledby="ot-1">
+              <img src="assets/pantallas/oller-portada-1600.webp" srcset="assets/pantallas/oller-portada-800.webp 800w, assets/pantallas/oller-portada-1600.webp 1600w" sizes="(min-width: 1000px) 46vw, (min-width: 700px) 66vw, 92vw" width="1600" height="1067" loading="lazy" decoding="async" alt="Portada del sitio de Oller: la fachada de un edificio con balcones y plantas">
+            </figure>
+            <figure class="visor__panel" role="tabpanel" id="op-2" aria-labelledby="ot-2">
+              <img src="assets/pantallas/oller-unidades-1600.webp" srcset="assets/pantallas/oller-unidades-800.webp 800w, assets/pantallas/oller-unidades-1600.webp 1600w" sizes="(min-width: 1000px) 46vw, (min-width: 700px) 66vw, 92vw" width="1600" height="1067" loading="lazy" decoding="async" alt="Tabla de unidades disponibles de Oller, con el enlace para visitar cada una">
+            </figure>
+            <figure class="visor__panel" role="tabpanel" id="op-3" aria-labelledby="ot-3">
+              <img src="assets/pantallas/oller-obra-1600.webp" srcset="assets/pantallas/oller-obra-800.webp 800w, assets/pantallas/oller-obra-1600.webp 1600w" sizes="(min-width: 1000px) 46vw, (min-width: 700px) 66vw, 92vw" width="1600" height="1067" loading="lazy" decoding="async" alt="Sección de avance de obra de Oller, con dos fotos en blanco y negro">
+            </figure>
+          </div>
+          <div class="visor__barra">
+            <div class="visor__tabs" role="tablist" aria-label="Pantallas de Oller">
+              <button class="visor__tab" type="button" role="tab" id="ot-1" aria-controls="op-1" aria-selected="true">Portada</button>
+              <button class="visor__tab" type="button" role="tab" id="ot-2" aria-controls="op-2" aria-selected="false" tabindex="-1">Unidades</button>
+              <button class="visor__tab" type="button" role="tab" id="ot-3" aria-controls="op-3" aria-selected="false" tabindex="-1">Avance de obra</button>
+            </div>
+          </div>
+        </div>
+        <figure class="caso__movil">
+          <div class="caso__telefono">
+            <video muted loop playsinline preload="none" poster="assets/video/oller-recorrido.jpg" width="540" height="960" data-recorrido aria-label="Recorrido grabado del sitio de Oller en un celular">
+              <source src="assets/video/oller-recorrido.mp4" type="video/mp4">
+            </video>
+          </div>
+          <figcaption><span>En celular</span><button class="visor__pausa" type="button" data-pausa-recorrido aria-label="Pausar el recorrido de Oller" hidden>Pausar</button></figcaption>
+        </figure>
+      </article>
+    </div>
+    </div>
+    </div>
+
+    <div class="banda banda--azul" data-banda>
+    <div class="banda__forma">
+    <div class="caja">
+      <article class="caso" aria-labelledby="c-tarn">
+        <div class="caso__meta">
+          <span class="num" aria-hidden="true">03</span>
+          <h3 class="caso__nombre" id="c-tarn"><span>Tarn</span></h3>
+          <p class="caso__linea">Indumentaria · Marca y tienda</p>
+          <p class="rotulo">Marca de concepto</p>
+          <a class="enlace" href="https://nea-tarn.onrender.com" target="_blank" rel="noopener">Ver sitio<span class="enlace__dir">nea-tarn.onrender.com</span></a>
+        </div>
+        <div class="visor caso__visor" data-visor>
+          <div class="visor__marco">
+            <figure class="visor__panel" role="tabpanel" id="tp-1" aria-labelledby="tt-1">
+              <img src="assets/pantallas/tarn-portada-1600.webp" srcset="assets/pantallas/tarn-portada-800.webp 800w, assets/pantallas/tarn-portada-1600.webp 1600w" sizes="(min-width: 1000px) 46vw, (min-width: 700px) 66vw, 92vw" width="1600" height="1067" loading="lazy" decoding="async" alt="Portada de la tienda de Tarn: una montaña al atardecer">
+            </figure>
+            <figure class="visor__panel" role="tabpanel" id="tp-2" aria-labelledby="tt-2">
+              <img src="assets/pantallas/tarn-producto-1600.webp" srcset="assets/pantallas/tarn-producto-800.webp 800w, assets/pantallas/tarn-producto-1600.webp 1600w" sizes="(min-width: 1000px) 46vw, (min-width: 700px) 66vw, 92vw" width="1600" height="1067" loading="lazy" decoding="async" alt="Pantalla de producto de Tarn: fotos de un cortaviento, precio, talles y botón de compra">
+            </figure>
+            <figure class="visor__panel" role="tabpanel" id="tp-3" aria-labelledby="tt-3">
+              <img src="assets/pantallas/tarn-productos-1600.webp" srcset="assets/pantallas/tarn-productos-800.webp 800w, assets/pantallas/tarn-productos-1600.webp 1600w" sizes="(min-width: 1000px) 46vw, (min-width: 700px) 66vw, 92vw" width="1600" height="1067" loading="lazy" decoding="async" alt="Grilla de productos de Tarn, con seis prendas">
+            </figure>
+          </div>
+          <div class="visor__barra">
+            <div class="visor__tabs" role="tablist" aria-label="Pantallas de Tarn">
+              <button class="visor__tab" type="button" role="tab" id="tt-1" aria-controls="tp-1" aria-selected="true">Portada</button>
+              <button class="visor__tab" type="button" role="tab" id="tt-2" aria-controls="tp-2" aria-selected="false" tabindex="-1">Producto</button>
+              <button class="visor__tab" type="button" role="tab" id="tt-3" aria-controls="tp-3" aria-selected="false" tabindex="-1">Productos</button>
+            </div>
+          </div>
+        </div>
+        <figure class="caso__movil">
+          <div class="caso__telefono">
+            <video muted loop playsinline preload="none" poster="assets/video/tarn-recorrido.jpg" width="540" height="960" data-recorrido aria-label="Recorrido grabado del sitio de Tarn en un celular">
+              <source src="assets/video/tarn-recorrido.mp4" type="video/mp4">
+            </video>
+          </div>
+          <figcaption><span>En celular</span><button class="visor__pausa" type="button" data-pausa-recorrido aria-label="Pausar el recorrido de Tarn" hidden>Pausar</button></figcaption>
+        </figure>
+      </article>
+    </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="banda banda--que sec--negra" id="que-hacemos" aria-labelledby="t-que" data-banda>
+  <div class="banda__forma">
+    <div class="caja">
+      <h2 class="sec__titulo rev" id="t-que">Qué hacemos</h2>
+
+      <div class="cap rev" id="cap" data-cap>
+        <div class="cap__lista" role="tablist" aria-label="Áreas" aria-orientation="vertical">
+          <button class="cap__tab" type="button" role="tab" id="ct-marca" aria-controls="cp-marca" aria-selected="true" data-area="marca"><span class="num" aria-hidden="true">01</span><span class="cap__nombre">Marca</span></button>
+          <button class="cap__tab" type="button" role="tab" id="ct-sitios" aria-controls="cp-sitios" aria-selected="false" tabindex="-1" data-area="sitios"><span class="num" aria-hidden="true">02</span><span class="cap__nombre">Sitios web</span></button>
+          <button class="cap__tab" type="button" role="tab" id="ct-sistemas" aria-controls="cp-sistemas" aria-selected="false" tabindex="-1" data-area="sistemas"><span class="num" aria-hidden="true">03</span><span class="cap__nombre">Sistemas</span></button>
+          <button class="cap__tab" type="button" role="tab" id="ct-anuncios" aria-controls="cp-anuncios" aria-selected="false" tabindex="-1" data-area="anuncios"><span class="num" aria-hidden="true">04</span><span class="cap__nombre">Anuncios</span></button>
+        </div>
+
+        <div class="cap__paneles">
+          <div class="cap__panel" role="tabpanel" id="cp-marca" aria-labelledby="ct-marca">
+            <figure class="cap__muestra">
+              <div class="cap__cuadro">
+                <img src="assets/pantallas/brigida-afiches-1080.webp" width="1080" height="1080" loading="lazy" decoding="async" alt="Tres afiches de Brígida para sus noches: al centro, el de la noche de vinos naturales, en verde">
+              </div>
+              <figcaption><span>Afiches de Brígida</span><span class="rotulo rotulo--claro">Marca de concepto</span></figcaption>
+            </figure>
+            <div class="cap__detalle">
+              <h3 class="cap__titulo">Marca</h3>
+              <ul class="cap__entregables"><li>Identidad</li><li>Logo</li><li>Sistema visual</li><li>Papelería</li></ul>
+            </div>
+          </div>
+
+          <div class="cap__panel" role="tabpanel" id="cp-sitios" aria-labelledby="ct-sitios">
+            <figure class="cap__muestra">
+              <div class="cap__cuadro">
+                <video muted loop playsinline preload="none" poster="assets/video/card-sitio.jpg" aria-label="Animación de muestra: un sitio web que se arma bloque por bloque">
+                  <source src="assets/video/card-sitio.webm" type="video/webm">
+                  <source src="assets/video/card-sitio.mp4" type="video/mp4">
+                </video>
+              </div>
+              <figcaption><span>Animación de muestra</span><button class="visor__pausa" type="button" data-pausa-video aria-pressed="false" hidden>Pausar</button></figcaption>
+            </figure>
+            <div class="cap__detalle">
+              <h3 class="cap__titulo">Sitios web</h3>
+              <ul class="cap__entregables"><li>Landing pages</li><li>Sitios institucionales</li><li>Tiendas online</li></ul>
+            </div>
+          </div>
+
+          <div class="cap__panel" role="tabpanel" id="cp-sistemas" aria-labelledby="ct-sistemas">
+            <figure class="cap__muestra">
+              <div class="cap__cuadro">
+                <video muted loop playsinline preload="none" poster="assets/video/card-sistemas.jpg" aria-label="Animación de muestra: un panel de consultas que se completa">
+                  <source src="assets/video/card-sistemas-corto.webm" type="video/webm">
+                  <source src="assets/video/card-sistemas-corto.mp4" type="video/mp4">
+                </video>
+              </div>
+              <figcaption><span>Animación de muestra</span><button class="visor__pausa" type="button" data-pausa-video aria-pressed="false" hidden>Pausar</button></figcaption>
+            </figure>
+            <div class="cap__detalle">
+              <h3 class="cap__titulo">Sistemas</h3>
+              <ul class="cap__entregables"><li>Software a medida</li><li>Turnos</li><li>Pedidos y stock</li></ul>
+            </div>
+          </div>
+
+          <div class="cap__panel" role="tabpanel" id="cp-anuncios" aria-labelledby="ct-anuncios">
+            <figure class="cap__muestra">
+              <div class="cap__cuadro">
+                <video muted loop playsinline preload="none" poster="assets/video/card-anuncios.jpg" aria-label="Animación de muestra: un anuncio en Instagram">
+                  <source src="assets/video/card-anuncios.webm" type="video/webm">
+                  <source src="assets/video/card-anuncios.mp4" type="video/mp4">
+                </video>
+              </div>
+              <figcaption><span>Animación de muestra</span><button class="visor__pausa" type="button" data-pausa-video aria-pressed="false" hidden>Pausar</button></figcaption>
+            </figure>
+            <div class="cap__detalle">
+              <h3 class="cap__titulo">Anuncios</h3>
+              <ul class="cap__entregables"><li>Instagram y Facebook</li><li>Imágenes y video</li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <section class="como" id="como-trabajamos" aria-labelledby="t-como">
+    <div class="caja">
+      <h2 class="sec__titulo rev" id="t-como">Cómo trabajamos</h2>
+    </div>
+      <ol class="principios rev">
+        <li class="principio">
+          <span class="num" aria-hidden="true">01</span>
+          <div class="principio__cuerpo"><h3 class="principio__titulo">El trabajo habla primero.</h3>
+          <p>Antes de la primera factura, el cliente recorre su sitio terminado o usa su sistema con datos reales. Si no sirve, no se cobra.</p></div>
+        </li>
+        <li class="principio">
+          <span class="num" aria-hidden="true">02</span>
+          <div class="principio__cuerpo"><h3 class="principio__titulo">Todo es del cliente.</h3>
+          <p>El dominio, el hosting, el código y las cuentas de anuncios quedan a nombre de la empresa.</p></div>
+        </li>
+        <li class="principio">
+          <span class="num" aria-hidden="true">03</span>
+          <div class="principio__cuerpo"><h3 class="principio__titulo">Decimos que no.</h3>
+          <p>Si un ajuste chico alcanza, o si algo no va a mover el número, lo decimos antes de cotizar.</p></div>
+        </li>
+        <li class="principio">
+          <span class="num" aria-hidden="true">04</span>
+          <div class="principio__cuerpo"><h3 class="principio__titulo">Hablamos con números.</h3>
+          <p>Acordamos por escrito qué se mide. Nunca prometemos ventas ni puestos en Google.</p></div>
+        </li>
+        <li class="principio">
+          <span class="num" aria-hidden="true">05</span>
+          <div class="principio__cuerpo"><h3 class="principio__titulo">Una sola vara.</h3>
+          <p>Las cuatro áreas se piensan juntas, en el mismo estudio.</p></div>
+        </li>
+        <li class="principio principio--cierre">
+          <p>Plazos, etapas y precios van por escrito en cada propuesta.</p>
+          <a class="boton" href="#contacto">Cuéntanos tu proyecto</a>
+        </li>
+      </ol>
+  </section>
+
+  <section class="banda banda--frase frase" aria-label="Para los que hacen la diferencia" data-banda>
+  <div class="banda__forma">
+    <div class="caja frase__fila">
+      <p class="frase__texto rev">Para los que hacen la diferencia.</p>
+      <svg class="frase__simbolo" id="simbolo" viewBox="0 0 620 620" role="img" aria-label="Símbolo de NEA Sistemas">
+        <path class="pz pz--no" d="M300,300L0,300L0,0C165.575,0 300,134.425 300,300Z"/>
+        <path class="pz pz--ne" d="M320,0L620,0L620,300L320,300Z"/>
+        <path class="pz pz--so" d="M0,320L300,320L300,620C134.425,620 0,485.575 0,320Z"/>
+        <path class="pz pz--se" d="M320,320L620,320L620,620C454.425,620 320,485.575 320,320Z"/>
+      </svg>
+    </div>
+  </div>
+  </section>
+
+  <section class="sec contacto" id="contacto" aria-labelledby="t-contacto">
+    <div class="caja contacto__grilla">
+      <div class="contacto__lado rev">
+        <h2 class="sec__titulo contacto__titular" id="t-contacto">Cuéntanos qué hace único a tu negocio.</h2>
+        <dl class="contacto__datos">
+          <div><dt>Correo</dt><dd><a class="enlace enlace--grande" href="mailto:hola@neasistemas.com.ar">hola@neasistemas.com.ar</a></dd></div>
+          <div><dt>WhatsApp</dt><dd><a class="enlace enlace--grande" href="https://wa.me/543755446606" target="_blank" rel="noopener">+54 3755 446606</a></dd></div>
+        </dl>
+      </div>
+
+      <form class="form rev" id="formulario" novalidate>
+        <h3 class="form__titulo">Cuéntanos tu proyecto.</h3>
+        <p class="form__bajada">Leemos todo y respondemos por escrito. Si tiene sentido, seguimos con una llamada.</p>
+
+        <fieldset class="campo campo--opciones">
+          <legend>¿Qué necesitas?</legend>
+          <div class="opciones">
+            <label class="opcion"><input type="checkbox" name="areas" value="Marca"><span>Marca</span></label>
+            <label class="opcion"><input type="checkbox" name="areas" value="Sitio web"><span>Sitio web</span></label>
+            <label class="opcion"><input type="checkbox" name="areas" value="Sistema"><span>Sistema</span></label>
+            <label class="opcion"><input type="checkbox" name="areas" value="Anuncios"><span>Anuncios</span></label>
+          </div>
+        </fieldset>
+
+        <div class="campo">
+          <label for="f-proyecto">Cuéntanos el proyecto</label>
+          <textarea id="f-proyecto" name="proyecto" rows="4" required></textarea>
+        </div>
+
+        <fieldset class="campo campo--opciones">
+          <legend>¿Para cuándo?</legend>
+          <div class="opciones">
+            <label class="opcion"><input type="radio" name="plazo" value="Lo antes posible"><span>Lo antes posible</span></label>
+            <label class="opcion"><input type="radio" name="plazo" value="En uno o dos meses"><span>En uno o dos meses</span></label>
+            <label class="opcion"><input type="radio" name="plazo" value="Sin apuro"><span>Sin apuro</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="campo campo--opciones">
+          <legend>Presupuesto aproximado <span class="opcional">(opcional)</span></legend>
+          <div class="opciones">
+            <label class="opcion"><input type="radio" name="presupuesto" value="Hasta $500.000"><span>Hasta $500.000</span></label>
+            <label class="opcion"><input type="radio" name="presupuesto" value="De $500.000 a $1.500.000"><span>De $500.000 a $1.500.000</span></label>
+            <label class="opcion"><input type="radio" name="presupuesto" value="Más de $1.500.000"><span>Más de $1.500.000</span></label>
+            <label class="opcion"><input type="radio" name="presupuesto" value="Todavía no lo sé"><span>Todavía no lo sé</span></label>
+          </div>
+        </fieldset>
+
+        <div class="form__dos">
+          <div class="campo"><label for="f-nombre">Nombre</label><input id="f-nombre" name="nombre" type="text" autocomplete="name" required></div>
+          <div class="campo"><label for="f-empresa">Empresa</label><input id="f-empresa" name="empresa" type="text" autocomplete="organization"></div>
+          <div class="campo"><label for="f-mail">Mail</label><input id="f-mail" name="mail" type="email" autocomplete="email" required></div>
+          <div class="campo"><label for="f-whatsapp">WhatsApp <span class="opcional">(opcional)</span></label><input id="f-whatsapp" name="whatsapp" type="tel" autocomplete="tel"></div>
+        </div>
+
+        <div class="form__pie">
+          <button class="boton" type="submit">Enviar</button>
+          <p class="form__estado" id="form-estado" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="banda banda--pie pie" data-banda>
+  <div class="banda__forma">
+  <div class="caja pie__grilla">
+    <div class="pie__marca">
+      <img src="assets/logo/lockup-horizontal-oscuro.svg" alt="NEA Sistemas" width="153" height="26" loading="lazy">
+      <p>Oberá, Misiones. Para toda Argentina.</p>
+    </div>
+    <nav class="pie__nav" aria-label="Pie">
+      <a href="#trabajos">Trabajos</a>
+      <a href="#que-hacemos" data-area="marca">Marca</a>
+      <a href="#que-hacemos" data-area="sitios">Sitios web</a>
+      <a href="#que-hacemos" data-area="sistemas">Sistemas</a>
+      <a href="#que-hacemos" data-area="anuncios">Anuncios</a>
+      <a href="#como-trabajamos">Cómo trabajamos</a>
+    </nav>
+    <div class="pie__firma">
+      <img src="assets/logo/piezas-fila-blanco.svg" alt="" width="80" height="16" loading="lazy">
+      <p>© 2026 NEA Sistemas</p>
+    </div>
+  </div>
+  </div>
+</footer>
+
+<script src="js/principal.js" defer></script>
+<script src="js/trabajos.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+/* Tokens de nea-sistemas · marca.json v2 (2026-11-20) · generado por generar_tokens.py. No editar a mano. */
+:root {
+  --color-negro: #0A0A0A;
+  --color-blanco: #FFFFFF;
+  --color-lima: #C7FF4A;
+  --color-electrico: #1E63FE;
+  --color-neutro: var(--color-negro);
+  --color-superficie: var(--color-blanco);
+  --color-acento: var(--color-lima);
+  --color-acento-2: var(--color-electrico);
+  --color-texto: var(--color-negro);
+  --font-display: "Switzer", system-ui, sans-serif;
+  --font-body: "Chivo", system-ui, sans-serif;
+  --peso-regular: 400;
+  --peso-medio: 500;
+  --peso-semibold: 600;
+  --fs-m2: 0.6944rem;
+  --fs-m1: 0.8331rem;
+  --fs-0: 1.0000rem;
+  --fs-1: 1.2000rem;
+  --fs-2: 1.4400rem;
+  --fs-3: 1.7281rem;
+  --fs-4: 2.0737rem;
+  --fs-5: 2.4881rem;
+  --fs-6: 2.9863rem;
+  --lh-texto: 1.5;
+  --lh-titulos: 1.02;
+  --space-1: 0.2500rem;
+  --space-2: 0.5000rem;
+  --space-3: 0.7500rem;
+  --space-4: 1.0000rem;
+  --space-5: 1.5000rem;
+  --space-6: 2.0000rem;
+  --space-7: 3.0000rem;
+  --space-8: 4.0000rem;
+  --space-9: 6.0000rem;
+  --space-10: 8.0000rem;
+}
+@supports (color: oklch(0% 0 0)) {
+  :root {
+    --color-negro: oklch(14.48% 0.0000 89.88);
+    --color-blanco: oklch(100.00% 0.0000 89.88);
+    --color-lima: oklch(92.99% 0.2085 125.43);
+    --color-electrico: oklch(56.07% 0.2400 262.97);
+  }
+}
