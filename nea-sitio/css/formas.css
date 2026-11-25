@@ -41,9 +41,9 @@
 .es-fija .cap__paneles { min-height: 0; grid-template-rows: minmax(0, 1fr); }
 .es-fija .cap__panel { min-height: 0; height: 100%; grid-template-rows: minmax(0, 1fr) auto; gap: clamp(0.5rem, 1.5vh, 1.25rem) var(--space-6); align-content: stretch; }
 .es-fija .cap__muestra { min-height: 0; container-type: size; }
-/* Llena el lugar disponible sin recortar de más la muestra, que es cuadrada. */
-.es-fija .cap__muestra > * { --h: min(100cqh - 3.5rem, 112cqw); width: min(100cqw, var(--h) * 1.2); }
-.es-fija .cap__cuadro { aspect-ratio: auto; height: var(--h); }
+/* La muestra es cuadrada y se ve entera. */
+.es-fija .cap__muestra > * { --h: min(100cqh - 3.5rem, 100cqw); width: min(100cqw, max(var(--h), 17rem)); }
+.es-fija .cap__cuadro { width: var(--h); height: var(--h); }
 .es-fija .cap__muestra figcaption { margin-top: 0.5rem; min-height: 3rem; flex-wrap: nowrap; }
 @media (max-width: 599px), (max-width: 999px) and (orientation: portrait) {
   .es-fija .cap__panel { grid-template-columns: minmax(0, 1fr); }
@@ -58,6 +58,7 @@
   .es-fija .cap__tab { padding: clamp(0.6rem, 1.8vh, 1.15rem) 0; }
   .es-fija .cap__panel { grid-template-columns: minmax(0, 1fr) clamp(11rem, 17vw, 17rem); }
   .es-fija .cap__detalle { align-self: end; padding-bottom: 3.5rem; }
+  .es-fija .cap__muestra { display: flex; flex-direction: column; justify-content: flex-end; }
 }
 /* El cambio: la pantalla nueva tapa a la anterior en el sentido del scroll. */
 .es-fija .cap__panel { opacity: 1; z-index: 0; transition: visibility 0s 0.7s; }
