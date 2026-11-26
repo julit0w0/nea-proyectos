@@ -14,7 +14,7 @@
 .portada__bajada { max-width: 46ch; font-size: var(--fs-1); line-height: 1.4; text-wrap: balance; }
 .portada__botones { display: flex; flex-wrap: wrap; gap: var(--space-3); }
 .portada__marco { overflow: clip; background: var(--color-negro); border-radius: 0 clamp(2rem, 6vw, 5.5rem) 0 clamp(2rem, 6vw, 5.5rem); }
-.portada__marco video { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; }
+.portada__marco video { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
 .portada__pie {
   display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem 1.5rem;
   width: min(100% - 2 * var(--margen), var(--ancho-max)); margin-inline: auto; padding-top: var(--space-3);
